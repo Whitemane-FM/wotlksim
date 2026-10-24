@@ -35,7 +35,7 @@ export class SimHeader extends Component {
 		this.knownIssuesContent = (<ul className="text-start ps-3 mb-0"></ul>) as HTMLElement;
 		this.knownIssuesLink = this.addKnownIssuesLink();
 		this.addBugReportLink();
-		this.addDownloadBinaryLink();
+		// this.addDownloadBinaryLink();
 		this.addSimOptionsLink();
 		this.addSocialLinks();
 
