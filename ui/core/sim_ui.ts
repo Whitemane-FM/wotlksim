@@ -58,7 +58,7 @@ export abstract class SimUI extends Component {
 		this.cssClass = config.cssClass;
 		this.cssScheme = config.cssScheme;
 		this.isWithinRaidSim = this.rootElem.closest('.within-raid-sim') != null;
-		config.noticeText = `Cataclysm sim development has begun! <a href="https://discord.gg/p3DgvmnDCS" target="_blank">Join our Discord</a> for more details or to contribute to the project.`;
+		config.noticeText = `Sim for Whitemane Frostmourne Rebuffed – including custom changes.`;
 		this.rootElem.innerHTML = `
 			<div class="sim-root">
 				<div class="sim-bg"></div>
@@ -173,9 +173,7 @@ export abstract class SimUI extends Component {
 		this.resultsViewer = new ResultsViewer(resultsViewerElem);
 
 		const socialsContainer = this.rootElem.querySelector('.sim-sidebar-socials') as HTMLElement;
-		socialsContainer.appendChild(SocialLinks.buildDiscordLink());
 		socialsContainer.appendChild(SocialLinks.buildGitHubLink());
-		socialsContainer.appendChild(SocialLinks.buildPatreonLink());
 
 		this.simTabContentsContainer = this.rootElem.querySelector(
 			'.sim-main.tab-content',
@@ -302,7 +300,7 @@ export abstract class SimUI extends Component {
 			const link = this.toLink();
 			const rngSeed = this.sim.getLastUsedRngSeed();
 			fetch(
-				'https://api.github.com/search/issues?q=is:issue+is:open+repo:wowsims/wotlk+' +
+				'https://api.github.com/search/issues?q=is:issue+is:open+repo:Whitemane-FM/wotlksim+' +
 					hash,
 			)
 				.then(resp => {
@@ -311,7 +309,7 @@ export abstract class SimUI extends Component {
 							window.open(issues.items[0].html_url, '_blank');
 						} else {
 							const base_url =
-								'https://github.com/wowsims/wotlk/issues/new?assignees=&labels=&title=Crash%20Report%20';
+								'https://github.com/Whitemane-FM/wotlksim/issues/new?assignees=&labels=&title=Crash%20Report%20';
 							const base = `${base_url}${hash}&body=`;
 							const maxBodyLength = URLMAXLEN - base.length;
 							let issueBody = encodeURIComponent(

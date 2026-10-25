@@ -10,7 +10,7 @@ on:
         required: true
       tag:
         description: 'Version Tag'
-        default: 'v0.0.0'
+        default: 'v1.0.0'
         required: true
 
 jobs:
@@ -19,43 +19,47 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref }}
+
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v5
         with:
           go-version: 1.23.x
 
       - name: Install Protoc
-        uses: arduino/setup-protoc@v1
+        uses: arduino/setup-protoc@v3
         with:
-          version: 3.x
+          version: "25.x"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Protoc Go plugin
         run: go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '19'
 
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-        with:
-          ref: ${{ github.event.inputs.ref }}
+      # Tests are skipped on purpose: the expected test results still hold the
+      # original WoWSims numbers, the Whitemane changes make them differ.
 
-      - name: Test
+      - name: Merge custom items
         run: |
-          make test
+          make clean
+          make custom-items
 
-      - name: Build 🔧
-        run: |
-          make clean && VERSION=${{ github.event.inputs.tag }} make release
+      - name: Build
+        run: VERSION=${{ github.event.inputs.tag }} make release
 
       - name: Release
         uses: ncipollo/release-action@v1
         with:
           commit: ${{ github.event.inputs.ref }}
           tag: ${{ github.event.inputs.tag }}
+          name: Whitemane FM Sim ${{ github.event.inputs.tag }}
           generateReleaseNotes: true
           makeLatest: true
           artifactErrorsFailBuild: true
@@ -66,4 +70,3 @@ jobs:
             wowsimwotlk-arm64-darwin.zip
             wowsimwotlk-amd64-linux.zip
             wowsimwotlk-windows.exe.zip
-

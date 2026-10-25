@@ -488,7 +488,7 @@ export class IndividualAddonImporter<SpecType extends Spec> extends Importer {
 
 		this.descriptionElem.innerHTML = `
 			<p>
-				Import settings from the <a href="https://www.curseforge.com/wow/addons/wowsimsexporter" target="_blank">WoWSims Importer In-Game Addon</a>.
+				Import settings from the <a href="https://github.com/Feralpaw69/WSE-WowSimsExporter_patched-Wow-3.3.5a" target="_blank">WoWSims Importer In-Game Addon</a>.
 			</p>
 			<p>
 				This feature imports gear, race, talents, glyphs, and professions. It does NOT import buffs, debuffs, consumes, rotation, or custom stats.

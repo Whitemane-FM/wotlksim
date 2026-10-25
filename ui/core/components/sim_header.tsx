@@ -35,7 +35,7 @@ export class SimHeader extends Component {
 		this.knownIssuesContent = (<ul className="text-start ps-3 mb-0"></ul>) as HTMLElement;
 		this.knownIssuesLink = this.addKnownIssuesLink();
 		this.addBugReportLink();
-		// this.addDownloadBinaryLink();
+		this.addDownloadBinaryLink();
 		this.addSimOptionsLink();
 		this.addSocialLinks();
 
@@ -171,7 +171,7 @@ export class SimHeader extends Component {
 
 	private addBugReportLink() {
 		this.addToolbarLink({
-			href: 'https://github.com/wowsims/wotlk/issues/new/choose',
+			href: 'https://github.com/Whitemane-FM/wotlksim/issues/new',
 			parent: this.simToolbar,
 			icon: 'fas fa-bug fa-lg',
 			tooltip: 'Report a bug or<br>Request a feature',
@@ -179,7 +179,7 @@ export class SimHeader extends Component {
 	}
 
 	private addDownloadBinaryLink() {
-		const href = 'https://github.com/wowsims/wotlk/releases';
+		const href = 'https://github.com/Whitemane-FM/wotlksim/releases';
 		const icon = 'fas fa-gauge-high fa-lg';
 		const parent = this.simToolbar;
 
@@ -227,26 +227,12 @@ export class SimHeader extends Component {
 		container.classList.add('sim-toolbar-socials');
 		this.simToolbar.appendChild(container);
 
-		this.addDiscordLink(container);
 		this.addGitHubLink(container);
-		this.addPatreonLink(container);
-	}
-
-	private addDiscordLink(container: HTMLElement) {
-		container.appendChild(
-			<div className="sim-toolbar-item">{SocialLinks.buildDiscordLink()}</div>,
-		);
 	}
 
 	private addGitHubLink(container: HTMLElement) {
 		container.appendChild(
 			<div className="sim-toolbar-item">{SocialLinks.buildGitHubLink()}</div>,
-		);
-	}
-
-	private addPatreonLink(container: HTMLElement) {
-		container.appendChild(
-			<div className="sim-toolbar-item">{SocialLinks.buildPatreonLink()}</div>,
 		);
 	}
 

@@ -54,7 +54,7 @@ func main() {
 	fmt.Printf("Version: %s\n", Version)
 	if !*skipVersionCheck && Version != "development" {
 		go func() {
-			resp, err := http.Get("https://api.github.com/repos/wowsims/wotlk/releases/latest")
+			resp, err := http.Get("https://api.github.com/repos/Whitemane-FM/wotlksim/releases/latest")
 			if err != nil {
 				return
 			}
@@ -286,7 +286,7 @@ func (s *server) runServer(useFS bool, host string, launchBrowser bool, simName 
 	})
 	http.HandleFunc("/", func(resp http.ResponseWriter, req *http.Request) {
 		if req.URL.Path == "/" {
-			http.Redirect(resp, req, "/wotlk/", http.StatusPermanentRedirect)
+			http.Redirect(resp, req, "/wotlksim/", http.StatusPermanentRedirect)
 			return
 		}
 		resp.Header().Add("Cache-Control", "no-cache")
@@ -301,6 +301,10 @@ func (s *server) runServer(useFS bool, host string, launchBrowser bool, simName 
 				req.URL.Path = strings.Replace(req.URL.Path, "sim_worker.js", "net_worker.js", 1)
 			}
 		}
+		// The UI is built for /wotlksim/, the embedded files live under wotlk/.
+		if req.URL.Path == "/wotlksim" || strings.HasPrefix(req.URL.Path, "/wotlksim/") {
+			req.URL.Path = "/wotlk" + strings.TrimPrefix(req.URL.Path, "/wotlksim")
+		}
 		fs.ServeHTTP(resp, req)
 	})
 
@@ -308,7 +312,7 @@ func (s *server) runServer(useFS bool, host string, launchBrowser bool, simName 
 		if strings.HasPrefix(host, ":") {
 			host = "localhost" + host
 		}
-		url := fmt.Sprintf("http://%s/wotlk/%s", host, simName)
+		url := fmt.Sprintf("http://%s/wotlksim/%s", host, simName)
 		log.Printf("Launching interface on %s", url)
 		go func() {
 			err := browser.OpenURL(url)
