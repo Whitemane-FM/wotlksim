@@ -58,7 +58,7 @@ export abstract class SimUI extends Component {
 		this.cssClass = config.cssClass;
 		this.cssScheme = config.cssScheme;
 		this.isWithinRaidSim = this.rootElem.closest('.within-raid-sim') != null;
-		config.noticeText = `Sim for Whitemane Frostmourne Rebuffed – including custom changes.`;
+		config.noticeText = `Sim for Whitemane Frostmourne Rebuffed – including custom changes. Based on <a href="https://github.com/wowsims/wotlk" target="_blank">WoWSims</a>.`;
 		this.rootElem.innerHTML = `
 			<div class="sim-root">
 				<div class="sim-bg"></div>
