@@ -179,7 +179,7 @@ export class SimHeader extends Component {
 	}
 
 	private addDownloadBinaryLink() {
-		const href = 'https://github.com/Whitemane-FM/wotlksim/releases';
+		const href = 'https://github.com/Whitemane-FM/wotlksim/releases/latest/download/wowsimwotlk-windows.exe.zip';
 		const icon = 'fas fa-gauge-high fa-lg';
 		const parent = this.simToolbar;
 
@@ -192,7 +192,7 @@ export class SimHeader extends Component {
 								href: href,
 								parent: parent,
 								icon: icon,
-								tooltip: 'Newer version of simulator available for download',
+								tooltip: 'Newer version of simulator available for download (Windows)',
 								classes: 'downbin link-danger',
 							});
 						}
@@ -206,7 +206,7 @@ export class SimHeader extends Component {
 				href: href,
 				parent: parent,
 				icon: icon,
-				tooltip: 'Download simulator for faster simulating',
+				tooltip: 'Download simulator for Windows (faster simulating)',
 				classes: 'downbin',
 			});
 		}
