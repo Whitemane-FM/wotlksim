@@ -28,7 +28,7 @@ func init() {
 	core.AddEffectsToTest = false
 	defer func() { core.AddEffectsToTest = true }()
 
-	// Armata Strigoi: 1 PPM (6% per roll at 3.60 speed), no internal cooldown, on every
+	// Armata Strigoi: 1.5 PPM (9% per roll at 3.60 speed), no internal cooldown, on every
 	// landed melee attack: auto attacks and specials (e.g. Crusader Strike, Divine Storm
 	// per target hit, Judgement, Hammer of Wrath). Each roll binds a Forgotten Soul.
 	// At 4 souls they are released and trigger an instant weapon attack. That attack
@@ -65,7 +65,7 @@ func init() {
 			Callback: core.CallbackOnSpellHitDealt,
 			ProcMask: core.ProcMaskMelee,
 			Outcome:  core.OutcomeLanded,
-			PPM:      1,
+			PPM:      1.5,
 			Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
 				if spell == soulAttack {
 					return // the released souls don't bind new ones
