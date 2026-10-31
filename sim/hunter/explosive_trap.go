@@ -33,6 +33,8 @@ func (hunter *Hunter) registerExplosiveTrapSpell(timer *core.Timer) {
 
 		DamageMultiplierAdditive: 1 +
 			.02*float64(hunter.Talents.TNT),
+		// wotlksim: Whitemane +8% Explosive Trap damage (explosion and ticks).
+		DamageMultiplier: 1.08,
 		CritMultiplier:   hunter.critMultiplier(false, false, false),
 		ThreatMultiplier: 1,
 
