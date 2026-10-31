@@ -14,6 +14,8 @@ func (shaman *Shaman) registerLightningShieldSpell() {
 
 	actionID := core.ActionID{SpellID: 49281}
 	procChance := 0.02*float64(shaman.Talents.StaticShock) + core.TernaryFloat64(shaman.HasSetBonus(ItemSetThrallsBattlegear, 2), 0.03, 0)
+	// wotlksim: Whitemane +50% Static Shock proc chance (e.g. 6% -> 9%, 9% -> 13.5% with T9 2pc).
+	procChance *= 1.5
 
 	procSpell := shaman.RegisterSpell(core.SpellConfig{
 		ActionID:    core.ActionID{SpellID: 49279},
