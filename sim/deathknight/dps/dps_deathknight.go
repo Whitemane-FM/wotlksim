@@ -51,6 +51,12 @@ func NewDpsDeathknight(character *core.Character, player *proto.Player) *DpsDeat
 		AutoSwingMelee: true,
 	})
 
+	// wotlksim: Whitemane +8% auto attack damage for Unholy DKs (most talent points in Unholy).
+	if dpsDk.PrimaryTalentTree == 2 {
+		dpsDk.AutoAttacks.MHConfig().DamageMultiplier *= 1.08
+		dpsDk.AutoAttacks.OHConfig().DamageMultiplier *= 1.08
+	}
+
 	return dpsDk
 }
 
