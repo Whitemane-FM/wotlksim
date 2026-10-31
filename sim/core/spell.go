@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"math"
 	"time"
 
 	"github.com/wowsims/wotlk/sim/core/stats"
@@ -64,6 +65,10 @@ type Spell struct {
 
 	// The unit who will perform this spell.
 	Unit *Unit
+
+	// wotlksim: if set, the casts, hits and damage of this spell are multiplied by this
+	// factor at the end of each iteration (e.g. 1.8 = count every cast as 1.8 casts).
+	MetricsScale float64
 
 	// Fire, Frost, Shadow, etc.
 	SpellSchool SpellSchool
@@ -423,6 +428,20 @@ func (spell *Spell) SetMetricsSplit(splitIdx int32) {
 func (spell *Spell) doneIteration() {
 	if spell.Flags.Matches(SpellFlagNoMetrics) {
 		return
+	}
+
+	if spell.MetricsScale > 0 && spell.MetricsScale != 1 {
+		scale := spell.MetricsScale
+		scaleCount := func(n int32) int32 { return int32(math.Round(float64(n) * scale)) }
+		for i := range spell.splitSpellMetrics {
+			for j := range spell.splitSpellMetrics[i] {
+				m := &spell.splitSpellMetrics[i][j]
+				m.Casts, m.Misses, m.Hits, m.Crits = scaleCount(m.Casts), scaleCount(m.Misses), scaleCount(m.Hits), scaleCount(m.Crits)
+				m.TotalDamage *= scale
+				m.TotalThreat *= scale
+				m.TotalCastTime = time.Duration(float64(m.TotalCastTime) * scale)
+			}
+		}
 	}
 
 	if len(spell.splitSpellMetrics) == 1 {

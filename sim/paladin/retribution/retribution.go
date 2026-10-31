@@ -75,6 +75,9 @@ func (ret *RetributionPaladin) applyWhitemaneBuffs() {
 	// Consecration: +6% damage.
 	if ret.Consecration != nil {
 		ret.Consecration.DamageMultiplier *= 1.06
+		// Whitemane: about 80% more Consecration casts. The sim keeps the rotation and counts
+		// every cast as 1.8 casts (casts, hits and damage x1.8) at the end of each iteration.
+		ret.Consecration.MetricsScale = 1.8
 	}
 
 	// Divine Storm and Hand of Reckoning: +5% crit chance.
