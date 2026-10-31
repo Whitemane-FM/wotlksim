@@ -163,7 +163,47 @@ func MakeStackingAura(character *Character, config StackingStatAura) *Aura {
 	config.Aura.OnStacksChange = func(aura *Aura, sim *Simulation, oldStacks int32, newStacks int32) {
 		character.AddStatsDynamic(sim, bonusPerStack.Multiply(float64(newStacks-oldStacks)))
 	}
-	return character.RegisterAura(config.Aura)
+	aura := character.RegisterAura(config.Aura)
+	character.recordItemStatProc(aura, bonusPerStack, true)
+	return aura
+}
+
+// wotlksim: a stat proc or on-use effect of an equipped item, gem or enchant.
+type ItemStatProc struct {
+	Aura  *Aura
+	Bonus stats.Stats // per stack for stacking auras
+	// Stacking auras give Bonus per stack, up to Aura.MaxStacks.
+	Stacking bool
+}
+
+// Full bonus of the proc (all stacks for stacking auras).
+func (p ItemStatProc) MaxBonus() stats.Stats {
+	if p.Stacking && p.Aura.MaxStacks > 0 {
+		return p.Bonus.Multiply(float64(p.Aura.MaxStacks))
+	}
+	return p.Bonus
+}
+
+// Part of the bonus the owner has right now.
+func (p ItemStatProc) ActiveBonus() stats.Stats {
+	if !p.Aura.IsActive() {
+		return stats.Stats{}
+	}
+	if p.Stacking {
+		return p.Bonus.Multiply(float64(p.Aura.GetStacks()))
+	}
+	return p.Bonus
+}
+
+func (character *Character) recordItemStatProc(aura *Aura, bonus stats.Stats, stacking bool) {
+	if character.applyingItemEffects {
+		for _, p := range character.ItemStatProcs {
+			if p.Aura == aura {
+				return // shared aura, e.g. the same enchant on two items
+			}
+		}
+		character.ItemStatProcs = append(character.ItemStatProcs, ItemStatProc{Aura: aura, Bonus: bonus, Stacking: stacking})
+	}
 }
 
 // Returns the same Aura for chaining.
@@ -247,7 +287,9 @@ func (character *Character) NewTemporaryStatsAuraWrapped(auraLabel string, actio
 		modConfig(&config)
 	}
 
-	return character.GetOrRegisterAura(config)
+	aura := character.GetOrRegisterAura(config)
+	character.recordItemStatProc(aura, buffs, false)
+	return aura
 }
 
 func ApplyFixedUptimeAura(aura *Aura, uptime float64, tickLength time.Duration, startTime time.Duration) {

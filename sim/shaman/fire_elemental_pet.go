@@ -68,6 +68,20 @@ func (shaman *Shaman) NewFireElemental(bonusSpellPower float64) *FireElemental {
 
 func (fireElemental *FireElemental) enable(sim *core.Simulation) {
 	fireElemental.FireShieldAura.Activate(sim)
+
+	// wotlksim: the elemental is calculated as if every spell power proc and on-use effect of the
+	// shaman's equipment (trinkets, Lightweave Embroidery, stacking trinkets at max stacks, ...)
+	// were active for its whole duration. Procs already active on summon are in its snapshot.
+	missingSpellPower := 0.0
+	for _, proc := range fireElemental.shamanOwner.ItemStatProcs {
+		missingSpellPower += proc.MaxBonus()[stats.SpellPower] - proc.ActiveBonus()[stats.SpellPower]
+	}
+	if missingSpellPower > 0 {
+		fireElemental.AddInheritedStatsDynamic(sim, stats.Stats{
+			stats.SpellPower:  missingSpellPower * 0.4970,
+			stats.AttackPower: missingSpellPower * 4.2381,
+		})
+	}
 }
 
 func (fireElemental *FireElemental) disable(sim *core.Simulation) {

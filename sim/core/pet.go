@@ -189,6 +189,13 @@ func (pet *Pet) EnableWithTimeout(sim *Simulation, petAgent PetAgent, petDuratio
 	sim.AddPendingAction(pet.timeoutAction)
 }
 
+// wotlksim: adds stats to the pet as inherited stats, so they are removed again when the
+// pet is dismissed (like the stats it inherits on summon).
+func (pet *Pet) AddInheritedStatsDynamic(sim *Simulation, s stats.Stats) {
+	pet.inheritedStats.AddInplace(&s)
+	pet.AddStatsDynamic(sim, s)
+}
+
 // Enables and possibly updates how the pet inherits its owner's stats. DK use only.
 func (pet *Pet) EnableDynamicStats(inheritance PetStatInheritance) {
 	if !slices.Contains(pet.Owner.DynamicStatsPets, pet) {

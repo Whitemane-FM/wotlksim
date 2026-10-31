@@ -73,6 +73,11 @@ type Character struct {
 	// wotlksim: factor for the amounts of the item effect being applied (see ItemEffectScales); 0 outside of that.
 	itemEffectScale float64
 
+	// wotlksim: stat procs and on-use effects of the equipped items, gems and enchants
+	// (trinkets, Lightweave Embroidery, ...), recorded while their effects are applied.
+	applyingItemEffects bool
+	ItemStatProcs       []ItemStatProc
+
 	// Provides major cooldown management behavior.
 	majorCooldownManager
 
@@ -315,6 +320,9 @@ func (character *Character) clearBuildPhaseAuras(phase CharacterBuildPhase) {
 
 // Apply effects from all equipped core.
 func (character *Character) applyItemEffects(agent Agent) {
+	character.applyingItemEffects = true
+	defer func() { character.applyingItemEffects = false }()
+
 	for slot, eq := range character.Equipment {
 		if applyItemEffect, ok := itemEffects[eq.ID]; ok {
 			applyItemEffect(agent)
@@ -343,6 +351,8 @@ func (character *Character) applyItemEffects(agent Agent) {
 			applyWeaponEffect(agent, proto.ItemSlot(slot))
 		}
 	}
+
+	character.applyingItemEffects = false
 
 	if character.ItemSwap.IsEnabled() {
 		offset := int(proto.ItemSlot_ItemSlotMainHand)
