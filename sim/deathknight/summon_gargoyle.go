@@ -150,7 +150,7 @@ func (garg *GargoylePet) registerGargoyleStrikeSpell() {
 			},
 		},
 
-		DamageMultiplier: 1,
+		DamageMultiplier: 1.05, // wotlksim: Whitemane +5% Gargoyle Strike damage
 		CritMultiplier:   1.5,
 		ThreatMultiplier: 1,
 
