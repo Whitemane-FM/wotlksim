@@ -66,4 +66,10 @@ func (rogue *Rogue) registerEviscerate() {
 			spell.DealDamage(sim, result)
 		},
 	})
+
+	// wotlksim: Whitemane Combat rogues (most talent points in Combat) use Eviscerate about
+	// 4 times as often. The rotation is unchanged; casts, hits and damage are counted x4.
+	if rogue.PrimaryTalentTree == 1 {
+		rogue.Eviscerate.MetricsScale = 4
+	}
 }
