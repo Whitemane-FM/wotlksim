@@ -68,6 +68,15 @@ func (shaman *Shaman) NewFireElemental(bonusSpellPower float64) *FireElemental {
 
 func (fireElemental *FireElemental) enable(sim *core.Simulation) {
 	fireElemental.FireShieldAura.Activate(sim)
+
+	// wotlksim: the elemental doesn't snapshot spell power. Spell power the shaman gains or
+	// loses while it is out (trinket procs, Lightweave Embroidery, ...) is passed on live.
+	fireElemental.EnableDynamicStats(func(ownerStats stats.Stats) stats.Stats {
+		return stats.Stats{
+			stats.SpellPower:  ownerStats[stats.SpellPower] * 0.4970,
+			stats.AttackPower: ownerStats[stats.SpellPower] * 4.2381,
+		}
+	})
 }
 
 func (fireElemental *FireElemental) disable(sim *core.Simulation) {
