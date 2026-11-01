@@ -327,8 +327,11 @@ func (character *Character) applyItemEffects(agent Agent) {
 		if applyItemEffect, ok := itemEffects[eq.ID]; ok {
 			applyItemEffect(agent)
 		} else if applyItemEffect, ok := itemEffects[eq.ID-BaseVersionIDOffset]; ok && eq.ID > BaseVersionIDOffset {
-			// wotlksim: lower item level versions share the effect of the original item.
+			// wotlksim: lower item level versions share the effect of the original item,
+			// with their own (lower) amounts where known.
+			character.itemEffectScale = BaseVersionEffectScales[eq.ID]
 			applyItemEffect(agent)
+			character.itemEffectScale = 0
 		} else if applyItemEffect, ok := itemEffects[UpgradeBaseItemIDs[eq.ID]]; ok {
 			// wotlksim: upgrade levels and epic versions share the effect of their base item,
 			// with its amounts scaled for the better versions (e.g. epic Meteorite Whetstone).

@@ -469,6 +469,29 @@ const LINK_PREFIX = '#wotlksim-item-';
 // Lower item level versions of buffed items (e.g. Ulduar): original ID + this offset.
 const BASE_VERSION_ID_OFFSET = 10_000_000;
 
+// Special effects of the original (lower item level) versions, from the in-game tooltips.
+// Their amounts are also used by the sim (BaseVersionEffectScales).
+const BASE_VERSION_EFFECTS: Record<number, Array<string>> = {
+	45931: ['Equip: Your melee and ranged attacks have a chance to increase your armor penetration rating by 665 for 10 sec.'],
+	46038: ['Equip: Your melee and ranged attacks have a chance to increase your critical strike rating by 612 for 10 sec.'],
+	45609: ['Equip: Your melee and ranged attacks have a chance to increase your haste rating by 726 for 10 sec.'],
+	45263: ['Use: Increases attack power by 856 for 20 sec. (2 Min Cooldown)'],
+	45929: ['Equip: Each time you cast a spell, there is a chance you will gain up to 195 mana per 5 for 15 sec.'],
+	45535: ['Equip: Each time you cast a spell, there is a chance you will gain up to 241 mana per 5 for 15 sec.'],
+	45518: ['Equip: Your harmful spells have a chance to increase your spell power by 850 for 10 sec.'],
+	45490: ['Equip: Your spells have a chance to increase your spell power by 751 for 10 sec.'],
+	45466: ['Use: Increases your haste rating by 432 for 20 sec. (2 Min Cooldown)'],
+	45148: ['Use: Increases spell power by 505 for 20 sec. (2 Min Cooldown)'],
+	45158: ['Use: Increases dodge rating by 432 for 20 sec. (2 Min Cooldown)'],
+	45313: ['Use: Increases armor by 5152 for 20 sec. (2 Min Cooldown)'],
+	46021: ['Use: Increases parry rating by 380 for 20 sec. (2 Min Cooldown)'],
+};
+
+// Original versions with a special effect but no own effect text yet: they use the effect of the
+// buffed version (The General's Heart, Blood of the Old God, Meteorite Crystal).
+const BASE_VERSIONS_WITH_SHARED_EFFECT = new Set([45507, 45522, 46051]);
+const hasSpecialEffect = (originalId: number) => BASE_VERSIONS_WITH_SHARED_EFFECT.has(originalId);
+
 // Minimal shape of a UIItem, so this file doesn't depend on the generated protos.
 interface ItemData {
 	id: number;
@@ -567,11 +590,17 @@ function statBonusText(stats: Array<number>): Array<string> {
 	const v = (i: number) => Math.round(stats[i] || 0);
 	const parts: Array<string> = [];
 	const add = (amount: number, name: string) => amount && parts.push(`+${amount} ${name}`);
-	add(v(S.str), 'Strength');
-	add(v(S.agi), 'Agility');
-	add(v(S.sta), 'Stamina');
-	add(v(S.int), 'Intellect');
-	add(v(S.spi), 'Spirit');
+	const primary = [v(S.str), v(S.agi), v(S.sta), v(S.int), v(S.spi)];
+	if (primary[0] > 0 && primary.every(amount => amount == primary[0])) {
+		// e.g. Nightmare Tear, chest enchants: "+6 to All Stats" as in game
+		parts.push(`+${primary[0]} to All Stats`);
+	} else {
+		add(v(S.str), 'Strength');
+		add(v(S.agi), 'Agility');
+		add(v(S.sta), 'Stamina');
+		add(v(S.int), 'Intellect');
+		add(v(S.spi), 'Spirit');
+	}
 	add(v(S.sp), 'Spell Power');
 	add(v(S.mp5), 'Mana per 5 sec.');
 	add(v(S.mana), 'Mana');
@@ -657,7 +686,8 @@ function buildGenericTooltip(itemId: number): CustomTooltip | null {
 	equip(stat(S.mp5), 'Restores # mana per 5 sec.');
 	equip(stat(S.spellPen), 'Increases your spell penetration by #.');
 
-	const effectLines = VARIANT_EFFECTS[String(itemId)] || [];
+	const baseEffects = itemId > BASE_VERSION_ID_OFFSET ? BASE_VERSION_EFFECTS[itemId - BASE_VERSION_ID_OFFSET] : undefined;
+	const effectLines = VARIANT_EFFECTS[String(itemId)] || baseEffects || [];
 	for (const text of effectLines) {
 		lines.push(green(text));
 	}
@@ -668,7 +698,7 @@ function buildGenericTooltip(itemId: number): CustomTooltip | null {
 		lines.push({ text: `Upgrade +${upgradeLevel} of the item level ${chainBase.ilvl} version.`, color: 'gray' });
 	}
 	const original = itemLookup?.(itemId - BASE_VERSION_ID_OFFSET);
-	if (original) {
+	if (original && !baseEffects && hasSpecialEffect(itemId - BASE_VERSION_ID_OFFSET)) {
 		lines.push({ text: `Original item level version. Special effects as on the item level ${original.ilvl} version.`, color: 'gray' });
 	}
 
@@ -704,25 +734,48 @@ function renderTooltip(tooltip: CustomTooltip, gemIds: Array<number>, enchantTex
 		}
 	}
 
+	// Gems beyond the item's own sockets (the extra socket from an Eternal Belt Buckle) are shown
+	// as an extra prismatic socket after the last socket, or where the sockets would be.
+	const socketCount = tooltip.lines.filter(isSocketLine).length;
+	const extraGemIds = gemIds.slice(socketCount).filter(id => id);
+	let extraGemsIdx = -1;
+	if (extraGemIds.length) {
+		const lastSocketIdx = tooltip.lines.reduce((last, line, i) => (isSocketLine(line) ? i : last), -1);
+		if (lastSocketIdx >= 0) {
+			extraGemsIdx = lastSocketIdx + 1;
+		} else {
+			extraGemsIdx = tooltip.lines.findIndex(isSocketBonusLine);
+			if (extraGemsIdx < 0) {
+				const lastStatIdx = tooltip.lines.reduce((last, line, i) => (typeof line === 'string' && /^\+\d/.test(line) ? i : last), -1);
+				extraGemsIdx = lastStatIdx >= 0 ? lastStatIdx + 1 : tooltip.lines.length;
+			}
+		}
+	}
+	const iconStyle = 'width:14px;height:14px;vertical-align:-2px;margin-right:6px';
+	const gemHtml = (gemId: number, socketColor: string) => {
+		const gemData = gemId ? gemLookup?.(gemId) : undefined;
+		if (gemData) {
+			const gemStats = statBonusText(gemData.stats);
+			const gemDescription = gemStats.length > 0 ? gemStats.join(', ') : gemData.name;
+			return `<div><img src="https://wow.zamimg.com/images/wow/icons/small/${gemData.icon}.jpg" style="${iconStyle}">${escapeHtml(gemDescription)}</div>`;
+		}
+		return `<div style="color:${LINE_COLORS.gray}"><img src="https://wow.zamimg.com/images/icons/socket-${socketColor.toLowerCase()}.gif" style="${iconStyle}">${escapeHtml(socketColor)} Socket</div>`;
+	};
+	const extraGemsHtml = () => extraGemIds.map(id => gemHtml(id, 'Prismatic')).join('');
+
 	let socketIdx = 0;
 	for (const [lineIdx, line] of tooltip.lines.entries()) {
 		if (lineIdx == enchantIdx) {
 			html += `<div style="color:${LINE_COLORS.green}">${escapeHtml(enchantText!)}</div>`;
 		}
+		if (lineIdx == extraGemsIdx) {
+			html += extraGemsHtml();
+		}
 		if (isSocketBonusLine(line) && socketBonusActive && typeof line === 'object' && 'text' in line) {
 			html += `<div style="color:${LINE_COLORS.green}">${escapeHtml(line.text)}</div>`;
 		} else if (typeof line === 'object' && !Array.isArray(line) && 'socket' in line) {
-			const gemData = gemIds[socketIdx] ? gemLookup?.(gemIds[socketIdx]) : undefined;
+			html += gemHtml(gemIds[socketIdx], line.socket);
 			socketIdx++;
-			const iconStyle = 'width:14px;height:14px;vertical-align:-2px;margin-right:6px';
-			if (gemData) {
-				const gemStats = statBonusText(gemData.stats);
-				const gemDescription = gemStats.length > 0 ? gemStats.join(', ') : gemData.name;
-				html += `<div><img src="https://wow.zamimg.com/images/wow/icons/small/${gemData.icon}.jpg" style="${iconStyle}">${escapeHtml(gemDescription)}</div>`;
-			} else {
-				const color = line.socket.toLowerCase();
-				html += `<div style="color:${LINE_COLORS.gray}"><img src="https://wow.zamimg.com/images/icons/socket-${color}.gif" style="${iconStyle}">${escapeHtml(line.socket)} Socket</div>`;
-			}
 		} else if (typeof line === 'string') {
 			html += `<div>${escapeHtml(line)}</div>`;
 		} else if (Array.isArray(line)) {
@@ -733,6 +786,9 @@ function renderTooltip(tooltip: CustomTooltip, gemIds: Array<number>, enchantTex
 	}
 	if (enchantIdx == tooltip.lines.length) {
 		html += `<div style="color:${LINE_COLORS.green}">${escapeHtml(enchantText!)}</div>`;
+	}
+	if (extraGemsIdx == tooltip.lines.length) {
+		html += extraGemsHtml();
 	}
 	return html;
 }
