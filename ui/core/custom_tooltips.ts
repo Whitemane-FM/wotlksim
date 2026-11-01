@@ -485,11 +485,19 @@ const BASE_VERSION_EFFECTS: Record<number, Array<string>> = {
 	45158: ['Use: Increases dodge rating by 432 for 20 sec. (2 Min Cooldown)'],
 	45313: ['Use: Increases armor by 5152 for 20 sec. (2 Min Cooldown)'],
 	46021: ['Use: Increases parry rating by 380 for 20 sec. (2 Min Cooldown)'],
+	45522: ['Equip: Chance on melee and ranged critical strike to increase your attack power by 1284 for 10 secs.'],
+	46051: [
+		'Use: Each spell cast within 20 seconds will grant a stacking bonus of 60 mana regen per 5 sec. Expires after 20 seconds.  Abilities with no mana cost will not trigger this trinket. (2 Min Cooldown)',
+	],
+	46312: ['Use: Calls forth a Vanquished Tentacle of Yogg-Saron to serve you. (2 Min Cooldown)'],
+	45507: [
+		'Equip: When struck in combat has a chance of shielding you in a protective barrier which will reduce damage from each attack by 205.  Lasts 10 secs.',
+	],
 };
 
 // Original versions with a special effect but no own effect text yet: they use the effect of the
-// buffed version (The General's Heart, Blood of the Old God, Meteorite Crystal).
-const BASE_VERSIONS_WITH_SHARED_EFFECT = new Set([45507, 45522, 46051]);
+// buffed version.
+const BASE_VERSIONS_WITH_SHARED_EFFECT = new Set<number>([]);
 const hasSpecialEffect = (originalId: number) => BASE_VERSIONS_WITH_SHARED_EFFECT.has(originalId);
 
 // Minimal shape of a UIItem, so this file doesn't depend on the generated protos.

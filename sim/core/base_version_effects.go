@@ -16,5 +16,8 @@ var BaseVersionEffectScales = map[int32]float64{
 	BaseVersionIDOffset + 45148: 505.0 / 534.0,   // Living Flame 226: 505 spell power
 	BaseVersionIDOffset + 45158: 432.0 / 457.0,   // Heart of Iron 226: 432 dodge
 	BaseVersionIDOffset + 45313: 5152.0 / 5448.0, // Furnace Stone 219: 5152 armor
-	BaseVersionIDOffset + 46021: 380.0 / 402.0,   // Royal Seal of King Llane 219: 380 parry
+	BaseVersionIDOffset + 45522: 1284.0 / 1358.0, // Blood of the Old God 226: 1284 attack power
+	BaseVersionIDOffset + 46051: 60.0 / 85.0,     // Meteorite Crystal 226: 60 mp5 per stack
+	// The General's Heart 226: 205 damage reduction, same as the sim's effect, no scaling.
+	BaseVersionIDOffset + 46021: 380.0 / 402.0, // Royal Seal of King Llane 219: 380 parry
 }
