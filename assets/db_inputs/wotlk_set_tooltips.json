@@ -1,5 +1,43 @@
 {
  "sets": {
+  "Conqueror's Aegis Battlegear": {
+   "pieces": [
+    "Conqueror's Aegis Battleplate",
+    "Conqueror's Aegis Gauntlets",
+    "Conqueror's Aegis Helm",
+    "Conqueror's Aegis Legplates",
+    "Conqueror's Aegis Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Exorcism and Hammer of Wrath abilities by 10%."
+    ],
+    [
+     4,
+     "Increases the critical strike chance of your Divine Storm and Crusader Strike abilities by 10%."
+    ]
+   ]
+  },
+  "Conqueror's Aegis Plate": {
+   "pieces": [
+    "Conqueror's Aegis Breastplate",
+    "Conqueror's Aegis Faceguard",
+    "Conqueror's Aegis Handguards",
+    "Conqueror's Aegis Legguards",
+    "Conqueror's Aegis Shoulderguards"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Seals of Vengeance, Corruption, and Righteousness by 10%."
+    ],
+    [
+     4,
+     "Shield of Righteousness now increases your shield block value by 225 for that attack and for 6 sec afterward."
+    ]
+   ]
+  },
   "Conqueror's Aegis Regalia": {
    "pieces": [
     "Conqueror's Aegis Gloves",
@@ -35,6 +73,25 @@
     [
      4,
      "Increases the bonus damage done per disease by 20% on Blood Strike, Heart Strike, Obliterate, and Scourge Strike."
+    ]
+   ]
+  },
+  "Conqueror's Darkruned Plate": {
+   "pieces": [
+    "Conqueror's Darkruned Chestguard",
+    "Conqueror's Darkruned Faceguard",
+    "Conqueror's Darkruned Handguards",
+    "Conqueror's Darkruned Legguards",
+    "Conqueror's Darkruned Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by Rune Strike by 10%."
+    ],
+    [
+     4,
+     "Anti-magic shell also grants you 10% reduction to physical damage taken."
     ]
    ]
   },
@@ -190,6 +247,44 @@
     ]
    ]
   },
+  "Conqueror's Siegebreaker Battlegear": {
+   "pieces": [
+    "Conqueror's Siegebreaker Battleplate",
+    "Conqueror's Siegebreaker Gauntlets",
+    "Conqueror's Siegebreaker Helmet",
+    "Conqueror's Siegebreaker Legplates",
+    "Conqueror's Siegebreaker Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Heroic Strike and Slam critical strikes have a chance to grant you 150 haste rating for 5 sec. (Proc chance: 40%)"
+    ],
+    [
+     4,
+     "Increases the critical strike chance of Mortal Strike and Bloodthirst by 10%. (Proc chance: 40%)"
+    ]
+   ]
+  },
+  "Conqueror's Siegebreaker Plate": {
+   "pieces": [
+    "Conqueror's Siegebreaker Breastplate",
+    "Conqueror's Siegebreaker Greathelm",
+    "Conqueror's Siegebreaker Handguards",
+    "Conqueror's Siegebreaker Legguards",
+    "Conqueror's Siegebreaker Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical strike chance of your Devastate ability by 10%."
+    ],
+    [
+     4,
+     "Shield Block also grants you 20% reduction to magical damage taken."
+    ]
+   ]
+  },
   "Conqueror's Terrorblade Battlegear": {
    "pieces": [
     "Conqueror's Terrorblade Breastplate",
@@ -266,6 +361,101 @@
     ]
    ]
   },
+  "Deathbringer Garb": {
+   "pieces": [
+    "Deathbringer Gloves",
+    "Deathbringer Hood",
+    "Deathbringer Leggings",
+    "Deathbringer Robe",
+    "Deathbringer Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Unstable Affliction by 20% and your Immolate by 10%."
+    ],
+    [
+     4,
+     "Increases the critical strike chance of your Shadow Bolt and Incinerate spells by 5%."
+    ]
+   ]
+  },
+  "Scourgestalker Battlegear": {
+   "pieces": [
+    "Scourgestalker Handguards",
+    "Scourgestalker Headpiece",
+    "Scourgestalker Legguards",
+    "Scourgestalker Spaulders",
+    "Scourgestalker Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Serpent Sting by 10%."
+    ],
+    [
+     4,
+     "Your Steady Shot has a chance to grant you 600 attack power for 15 sec. (Proc chance: 10%, 45s cooldown)"
+    ]
+   ]
+  },
+  "Valorous Aegis Battlegear": {
+   "pieces": [
+    "Valorous Aegis Battleplate",
+    "Valorous Aegis Gauntlets",
+    "Valorous Aegis Helm",
+    "Valorous Aegis Legplates",
+    "Valorous Aegis Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Exorcism and Hammer of Wrath abilities by 10%."
+    ],
+    [
+     4,
+     "Increases the critical strike chance of your Divine Storm and Crusader Strike abilities by 10%."
+    ]
+   ]
+  },
+  "Valorous Aegis Plate": {
+   "pieces": [
+    "Valorous Aegis Breastplate",
+    "Valorous Aegis Faceguard",
+    "Valorous Aegis Handguards",
+    "Valorous Aegis Legguards",
+    "Valorous Aegis Shoulderguards"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Seals of Vengeance, Corruption, and Righteousness by 10%."
+    ],
+    [
+     4,
+     "Shield of Righteousness now increases your shield block value by 225 for that attack and for 6 sec afterward."
+    ]
+   ]
+  },
+  "Valorous Aegis Regalia": {
+   "pieces": [
+    "Valorous Aegis Gloves",
+    "Valorous Aegis Greaves",
+    "Valorous Aegis Headpiece",
+    "Valorous Aegis Spaulders",
+    "Valorous Aegis Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Holy Shock critical heals now also place a periodic healing effect on the target, healing for 15% of the Holy Shock's heal amount over 9 sec."
+    ],
+    [
+     4,
+     "Your Sacred Shield can now trigger its effect every 4 sec instead of every 6."
+    ]
+   ]
+  },
   "Valorous Bonescythe Battlegear": {
    "pieces": [
     "Valorous Bonescythe Breastplate",
@@ -301,6 +491,44 @@
     [
      4,
      "Your ranged attack speed is increased by 20% while Aspect of the Viper is active."
+    ]
+   ]
+  },
+  "Valorous Darkruned Battlegear": {
+   "pieces": [
+    "Valorous Darkruned Battleplate",
+    "Valorous Darkruned Gauntlets",
+    "Valorous Darkruned Helmet",
+    "Valorous Darkruned Legplates",
+    "Valorous Darkruned Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical strike chance of Death Coil and Frost Strike by 8%."
+    ],
+    [
+     4,
+     "Increases the bonus damage done per disease by 20% on Blood Strike, Heart Strike, Obliterate, and Scourge Strike."
+    ]
+   ]
+  },
+  "Valorous Darkruned Plate": {
+   "pieces": [
+    "Valorous Darkruned Chestguard",
+    "Valorous Darkruned Faceguard",
+    "Valorous Darkruned Handguards",
+    "Valorous Darkruned Legguards",
+    "Valorous Darkruned Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by Rune Strike by 10%."
+    ],
+    [
+     4,
+     "Anti-magic shell also grants you 10% reduction to physical damage taken."
     ]
    ]
   },
@@ -665,6 +893,44 @@
     ]
    ]
   },
+  "Valorous Sanctification Garb": {
+   "pieces": [
+    "Valorous Circlet of Sanctification",
+    "Valorous Handwraps of Sanctification",
+    "Valorous Mantle of Sanctification",
+    "Valorous Pants of Sanctification",
+    "Valorous Raiments of Sanctification"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Devouring Plague by 15%."
+    ],
+    [
+     4,
+     "Your Mind Blast also grants you 240 haste rating for 4 sec."
+    ]
+   ]
+  },
+  "Valorous Sanctification Regalia": {
+   "pieces": [
+    "Valorous Cowl of Sanctification",
+    "Valorous Gloves of Sanctification",
+    "Valorous Leggings of Sanctification",
+    "Valorous Robe of Sanctification",
+    "Valorous Shoulderpads of Sanctification"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical heal chance of your Prayer of Healing by 10%."
+    ],
+    [
+     4,
+     "Casting Power Word: Shield also grants you 250 spell power for 5 sec."
+    ]
+   ]
+  },
   "Valorous Scourgeborne Battlegear": {
    "pieces": [
     "Valorous Scourgeborne Battleplate",
@@ -700,6 +966,101 @@
     [
      4,
      "Increases the duration of your Icebound Fortitude by 3 seconds."
+    ]
+   ]
+  },
+  "Valorous Siegebreaker Battlegear": {
+   "pieces": [
+    "Valorous Siegebreaker Battleplate",
+    "Valorous Siegebreaker Gauntlets",
+    "Valorous Siegebreaker Helmet",
+    "Valorous Siegebreaker Legplates",
+    "Valorous Siegebreaker Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Heroic Strike and Slam critical strikes have a chance to grant you 150 haste rating for 5 sec. (Proc chance: 40%)"
+    ],
+    [
+     4,
+     "Increases the critical strike chance of Mortal Strike and Bloodthirst by 10%. (Proc chance: 40%)"
+    ]
+   ]
+  },
+  "Valorous Siegebreaker Plate": {
+   "pieces": [
+    "Valorous Siegebreaker Breastplate",
+    "Valorous Siegebreaker Greathelm",
+    "Valorous Siegebreaker Handguards",
+    "Valorous Siegebreaker Legguards",
+    "Valorous Siegebreaker Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical strike chance of your Devastate ability by 10%."
+    ],
+    [
+     4,
+     "Shield Block also grants you 20% reduction to magical damage taken."
+    ]
+   ]
+  },
+  "Valorous Terrorblade Battlegear": {
+   "pieces": [
+    "Valorous Terrorblade Breastplate",
+    "Valorous Terrorblade Gauntlets",
+    "Valorous Terrorblade Helmet",
+    "Valorous Terrorblade Legplates",
+    "Valorous Terrorblade Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Deadly Poison causes you to gain 1 energy each time it deals damage."
+    ],
+    [
+     4,
+     "Increases the damage done by your Rupture by 20%."
+    ]
+   ]
+  },
+  "Valorous Worldbreaker Battlegear": {
+   "pieces": [
+    "Valorous Worldbreaker Chestguard",
+    "Valorous Worldbreaker Faceguard",
+    "Valorous Worldbreaker Grips",
+    "Valorous Worldbreaker Shoulderguards",
+    "Valorous Worldbreaker War-Kilt"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by Lava Lash and Stormstrike by 20%."
+    ],
+    [
+     4,
+     "Increases the frequency of Maelstrom Weapon being triggered by your melee weapon attacks by 20%."
+    ]
+   ]
+  },
+  "Valorous Worldbreaker Garb": {
+   "pieces": [
+    "Valorous Worldbreaker Gloves",
+    "Valorous Worldbreaker Hauberk",
+    "Valorous Worldbreaker Helm",
+    "Valorous Worldbreaker Kilt",
+    "Valorous Worldbreaker Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases periodic damage done by your Flame Shock ability by 20%."
+    ],
+    [
+     4,
+     "Your critical strikes from Lightning Bolt cause the target to take nature damage equal to 8% of the Lightning Bolt's damage over 4 sec."
     ]
    ]
   },
@@ -819,6 +1180,16 @@
   "40581": "Valorous Redemption Plate",
   "40583": "Valorous Redemption Plate",
   "40584": "Valorous Redemption Plate",
+  "45335": "Valorous Darkruned Plate",
+  "45336": "Valorous Darkruned Plate",
+  "45337": "Valorous Darkruned Plate",
+  "45338": "Valorous Darkruned Plate",
+  "45339": "Valorous Darkruned Plate",
+  "45340": "Valorous Darkruned Battlegear",
+  "45341": "Valorous Darkruned Battlegear",
+  "45342": "Valorous Darkruned Battlegear",
+  "45343": "Valorous Darkruned Battlegear",
+  "45344": "Valorous Darkruned Battlegear",
   "45345": "Valorous Nightsong Regalia",
   "45346": "Valorous Nightsong Regalia",
   "45347": "Valorous Nightsong Regalia",
@@ -833,20 +1204,85 @@
   "45357": "Valorous Nightsong Battlegear",
   "45358": "Valorous Nightsong Battlegear",
   "45359": "Valorous Nightsong Battlegear",
+  "45360": "Scourgestalker Battlegear",
+  "45361": "Scourgestalker Battlegear",
+  "45362": "Scourgestalker Battlegear",
+  "45363": "Scourgestalker Battlegear",
+  "45364": "Scourgestalker Battlegear",
   "45365": "Valorous Kirin'dor Garb",
   "45367": "Valorous Kirin'dor Garb",
   "45368": "Valorous Kirin'dor Garb",
   "45369": "Valorous Kirin'dor Garb",
+  "45370": "Valorous Aegis Regalia",
+  "45371": "Valorous Aegis Regalia",
+  "45372": "Valorous Aegis Regalia",
+  "45373": "Valorous Aegis Regalia",
+  "45374": "Valorous Aegis Regalia",
+  "45375": "Valorous Aegis Battlegear",
+  "45376": "Valorous Aegis Battlegear",
+  "45377": "Valorous Aegis Battlegear",
+  "45379": "Valorous Aegis Battlegear",
+  "45380": "Valorous Aegis Battlegear",
+  "45381": "Valorous Aegis Plate",
+  "45382": "Valorous Aegis Plate",
+  "45383": "Valorous Aegis Plate",
+  "45384": "Valorous Aegis Plate",
+  "45385": "Valorous Aegis Plate",
+  "45386": "Valorous Sanctification Regalia",
+  "45387": "Valorous Sanctification Regalia",
+  "45388": "Valorous Sanctification Regalia",
+  "45389": "Valorous Sanctification Regalia",
+  "45390": "Valorous Sanctification Regalia",
+  "45391": "Valorous Sanctification Garb",
+  "45392": "Valorous Sanctification Garb",
+  "45393": "Valorous Sanctification Garb",
+  "45394": "Valorous Sanctification Garb",
+  "45395": "Valorous Sanctification Garb",
+  "45396": "Valorous Terrorblade Battlegear",
+  "45397": "Valorous Terrorblade Battlegear",
+  "45398": "Valorous Terrorblade Battlegear",
+  "45399": "Valorous Terrorblade Battlegear",
+  "45400": "Valorous Terrorblade Battlegear",
   "45401": "Valorous Worldbreaker Regalia",
   "45402": "Valorous Worldbreaker Regalia",
   "45403": "Valorous Worldbreaker Regalia",
   "45404": "Valorous Worldbreaker Regalia",
   "45405": "Valorous Worldbreaker Regalia",
+  "45406": "Valorous Worldbreaker Garb",
+  "45408": "Valorous Worldbreaker Garb",
+  "45409": "Valorous Worldbreaker Garb",
+  "45410": "Valorous Worldbreaker Garb",
+  "45411": "Valorous Worldbreaker Garb",
+  "45412": "Valorous Worldbreaker Battlegear",
+  "45413": "Valorous Worldbreaker Battlegear",
+  "45414": "Valorous Worldbreaker Battlegear",
+  "45415": "Valorous Worldbreaker Battlegear",
+  "45416": "Valorous Worldbreaker Battlegear",
+  "45417": "Deathbringer Garb",
+  "45419": "Deathbringer Garb",
+  "45420": "Deathbringer Garb",
+  "45421": "Deathbringer Garb",
+  "45422": "Deathbringer Garb",
+  "45424": "Valorous Siegebreaker Plate",
+  "45425": "Valorous Siegebreaker Plate",
+  "45426": "Valorous Siegebreaker Plate",
+  "45427": "Valorous Siegebreaker Plate",
+  "45428": "Valorous Siegebreaker Plate",
+  "45429": "Valorous Siegebreaker Battlegear",
+  "45430": "Valorous Siegebreaker Battlegear",
+  "45431": "Valorous Siegebreaker Battlegear",
+  "45432": "Valorous Siegebreaker Battlegear",
+  "45433": "Valorous Siegebreaker Battlegear",
   "46111": "Conqueror's Darkruned Battlegear",
   "46113": "Conqueror's Darkruned Battlegear",
   "46115": "Conqueror's Darkruned Battlegear",
   "46116": "Conqueror's Darkruned Battlegear",
   "46117": "Conqueror's Darkruned Battlegear",
+  "46118": "Conqueror's Darkruned Plate",
+  "46119": "Conqueror's Darkruned Plate",
+  "46120": "Conqueror's Darkruned Plate",
+  "46121": "Conqueror's Darkruned Plate",
+  "46122": "Conqueror's Darkruned Plate",
   "46123": "Conqueror's Terrorblade Battlegear",
   "46124": "Conqueror's Terrorblade Battlegear",
   "46125": "Conqueror's Terrorblade Battlegear",
@@ -868,16 +1304,36 @@
   "46143": "Conqueror's Scourgestalker Battlegear",
   "46144": "Conqueror's Scourgestalker Battlegear",
   "46145": "Conqueror's Scourgestalker Battlegear",
+  "46146": "Conqueror's Siegebreaker Battlegear",
+  "46148": "Conqueror's Siegebreaker Battlegear",
+  "46149": "Conqueror's Siegebreaker Battlegear",
+  "46150": "Conqueror's Siegebreaker Battlegear",
+  "46151": "Conqueror's Siegebreaker Battlegear",
+  "46152": "Conqueror's Aegis Battlegear",
+  "46153": "Conqueror's Aegis Battlegear",
+  "46154": "Conqueror's Aegis Battlegear",
+  "46155": "Conqueror's Aegis Battlegear",
+  "46156": "Conqueror's Aegis Battlegear",
   "46157": "Conqueror's Nightsong Battlegear",
   "46158": "Conqueror's Nightsong Battlegear",
   "46159": "Conqueror's Nightsong Battlegear",
   "46160": "Conqueror's Nightsong Battlegear",
   "46161": "Conqueror's Nightsong Battlegear",
+  "46162": "Conqueror's Siegebreaker Plate",
   "46163": "Conqueror's Sanctification Garb",
+  "46164": "Conqueror's Siegebreaker Plate",
   "46165": "Conqueror's Sanctification Garb",
+  "46166": "Conqueror's Siegebreaker Plate",
+  "46167": "Conqueror's Siegebreaker Plate",
   "46168": "Conqueror's Sanctification Garb",
+  "46169": "Conqueror's Siegebreaker Plate",
   "46170": "Conqueror's Sanctification Garb",
   "46172": "Conqueror's Sanctification Garb",
+  "46173": "Conqueror's Aegis Plate",
+  "46174": "Conqueror's Aegis Plate",
+  "46175": "Conqueror's Aegis Plate",
+  "46176": "Conqueror's Aegis Plate",
+  "46177": "Conqueror's Aegis Plate",
   "46178": "Conqueror's Aegis Regalia",
   "46179": "Conqueror's Aegis Regalia",
   "46180": "Conqueror's Aegis Regalia",
