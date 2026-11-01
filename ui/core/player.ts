@@ -1107,6 +1107,7 @@ export class Player<SpecType extends Spec> {
 				equippedItem.enchant?.name,
 				equippedItem.enchant?.stats,
 				equippedItem.meetsSocketBonus(),
+				this.gear.asArray().flatMap(ei => (ei ? [ei.item.name] : [])),
 			);
 			return;
 		}

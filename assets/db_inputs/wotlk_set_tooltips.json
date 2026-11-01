@@ -1,0 +1,462 @@
+{
+ "sets": {
+  "Valorous Bonescythe Battlegear": {
+   "pieces": [
+    "Valorous Bonescythe Breastplate",
+    "Valorous Bonescythe Gauntlets",
+    "Valorous Bonescythe Helmet",
+    "Valorous Bonescythe Legplates",
+    "Valorous Bonescythe Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage dealt by your Rupture by 10%."
+    ],
+    [
+     4,
+     "Reduces the Energy cost of your Combo Moves by 5%."
+    ]
+   ]
+  },
+  "Valorous Cryptstalker Battlegear": {
+   "pieces": [
+    "Valorous Cryptstalker Handguards",
+    "Valorous Cryptstalker Headpiece",
+    "Valorous Cryptstalker Legguards",
+    "Valorous Cryptstalker Spaulders",
+    "Valorous Cryptstalker Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your pet deals an additional 5% damage."
+    ],
+    [
+     4,
+     "Your ranged attack speed is increased by 20% while Aspect of the Viper is active."
+    ]
+   ]
+  },
+  "Valorous Dreadnaught Battlegear": {
+   "pieces": [
+    "Valorous Dreadnaught Battleplate",
+    "Valorous Dreadnaught Helmet",
+    "Valorous Dreadnaught Legplates",
+    "Valorous Dreadnaught Gauntlets",
+    "Valorous Dreadnaught Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage of your Slam by 10%."
+    ],
+    [
+     4,
+     "Your Bleed periodic effects have a chance to make your next ability cost 5 less rage. (Proc chance: 10%)"
+    ]
+   ]
+  },
+  "Valorous Dreadnaught Plate": {
+   "pieces": [
+    "Valorous Dreadnaught Breastplate",
+    "Valorous Dreadnaught Greathelm",
+    "Valorous Dreadnaught Handguards",
+    "Valorous Dreadnaught Legguards",
+    "Valorous Dreadnaught Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage of your Shield Slam by 10%."
+    ],
+    [
+     4,
+     "Increases the duration of your Shield Wall by 3 seconds."
+    ]
+   ]
+  },
+  "Valorous Dreamwalker Battlegear": {
+   "pieces": [
+    "Valorous Dreamwalker Handgrips",
+    "Valorous Dreamwalker Headguard",
+    "Valorous Dreamwalker Legguards",
+    "Valorous Dreamwalker Raiments",
+    "Valorous Dreamwalker Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Rip lasts for an additional 4 seconds, and your Lacerate deals an additional 5% damage."
+    ],
+    [
+     4,
+     "Increases the duration of Barkskin by 3 seconds and decreases the cooldown of Tiger's Fury by 3 seconds."
+    ]
+   ]
+  },
+  "Valorous Dreamwalker Garb": {
+   "pieces": [
+    "Valorous Dreamwalker Cover",
+    "Valorous Dreamwalker Gloves",
+    "Valorous Dreamwalker Mantle",
+    "Valorous Dreamwalker Trousers",
+    "Valorous Dreamwalker Vestments"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Insect Swarm deals an additional 10% damage."
+    ],
+    [
+     4,
+     "Your Wrath and Starfire spells gain an additional 5% critical strike chance."
+    ]
+   ]
+  },
+  "Valorous Dreamwalker Regalia": {
+   "pieces": [
+    "Valorous Dreamwalker Handguards",
+    "Valorous Dreamwalker Headpiece",
+    "Valorous Dreamwalker Leggings",
+    "Valorous Dreamwalker Spaulders",
+    "Valorous Dreamwalker Robe"
+   ],
+   "bonuses": [
+    [
+     2,
+     "The cost of your Lifebloom is reduced by 5%."
+    ],
+    [
+     4,
+     "Your Nourish heals an additional 5% for each of your heal over time effects present on the target."
+    ]
+   ]
+  },
+  "Valorous Earthshatter Battlegear": {
+   "pieces": [
+    "Valorous Earthshatter Chestguard",
+    "Valorous Earthshatter Faceguard",
+    "Valorous Earthshatter Grips",
+    "Valorous Earthshatter Shoulderguards",
+    "Valorous Earthshatter War-Kilt"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Lightning Shield damage is increased by 10%."
+    ],
+    [
+     4,
+     "Your Flurry effect provides an additional 5% melee haste."
+    ]
+   ]
+  },
+  "Valorous Earthshatter Garb": {
+   "pieces": [
+    "Valorous Earthshatter Gloves",
+    "Valorous Earthshatter Hauberk",
+    "Valorous Earthshatter Helm",
+    "Valorous Earthshatter Kilt",
+    "Valorous Earthshatter Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Lightning Bolt costs 5% less mana."
+    ],
+    [
+     4,
+     "The bonus critical strike damage of your Lava Burst is increased by 10%."
+    ]
+   ]
+  },
+  "Valorous Earthshatter Regalia": {
+   "pieces": [
+    "Valorous Earthshatter Handguards",
+    "Valorous Earthshatter Headpiece",
+    "Valorous Earthshatter Legguards",
+    "Valorous Earthshatter Spaulders",
+    "Valorous Earthshatter Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Water Shield is 10% stronger."
+    ],
+    [
+     4,
+     "Increases the healing done by your Chain Heal and Healing Wave by 5%."
+    ]
+   ]
+  },
+  "Valorous Frostfire Garb": {
+   "pieces": [
+    "Valorous Frostfire Circlet",
+    "Valorous Frostfire Gloves",
+    "Valorous Frostfire Leggings",
+    "Valorous Frostfire Robe",
+    "Valorous Frostfire Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "You gain 25% more mana when you use a mana gem. \u00a0In addition, using a mana gem grants you 225 spell power for 15 sec."
+    ],
+    [
+     4,
+     "Your offensive spells gain an additional 5% increased critical strike bonus damage."
+    ]
+   ]
+  },
+  "Valorous Garb of Faith": {
+   "pieces": [
+    "Valorous Circlet of Faith",
+    "Valorous Handwraps of Faith",
+    "Valorous Mantle of Faith",
+    "Valorous Pants of Faith",
+    "Valorous Raiments of Faith"
+   ],
+   "bonuses": [
+    [
+     2,
+     "The mana cost of your Mind Blast is reduced by 10%."
+    ],
+    [
+     4,
+     "Your Shadow Word: Death has an additional 10% chance to critically strike."
+    ]
+   ]
+  },
+  "Valorous Plagueheart Garb": {
+   "pieces": [
+    "Valorous Plagueheart Circlet",
+    "Valorous Plagueheart Gloves",
+    "Valorous Plagueheart Leggings",
+    "Valorous Plagueheart Robe",
+    "Valorous Plagueheart Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Corruption and Immolate periodic effects have a chance to increase the critical strike chance of your next Shadow Bolt or Incinerate by 10% for the next 10 sec. (Proc chance: 15%)"
+    ],
+    [
+     4,
+     "Casting Life Tap grants you an additional 300 spirit for 10 seconds."
+    ]
+   ]
+  },
+  "Valorous Redemption Battlegear": {
+   "pieces": [
+    "Valorous Redemption Chestpiece",
+    "Valorous Redemption Gauntlets",
+    "Valorous Redemption Helm",
+    "Valorous Redemption Legplates",
+    "Valorous Redemption Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage dealt by your Divine Storm by 10%."
+    ],
+    [
+     4,
+     "Reduces the cooldown of your Judgment of Light, Judgment of Wisdom, and Judgment of Justice by 1 second."
+    ]
+   ]
+  },
+  "Valorous Redemption Plate": {
+   "pieces": [
+    "Valorous Redemption Breastplate",
+    "Valorous Redemption Faceguard",
+    "Valorous Redemption Handguards",
+    "Valorous Redemption Legguards",
+    "Valorous Redemption Shoulderguards"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage dealt by your Hammer of the Righteous by 10%."
+    ],
+    [
+     4,
+     "Increases the duration of your Divine Shield and Divine Protection by 3 seconds."
+    ]
+   ]
+  },
+  "Valorous Redemption Regalia": {
+   "pieces": [
+    "Valorous Redemption Gloves",
+    "Valorous Redemption Greaves",
+    "Valorous Redemption Headpiece",
+    "Valorous Redemption Spaulders",
+    "Valorous Redemption Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Holy Shock gains an additional 10% chance to critically strike."
+    ],
+    [
+     4,
+     "The cost of your Holy Light is reduced by 5%."
+    ]
+   ]
+  },
+  "Valorous Regalia of Faith": {
+   "pieces": [
+    "Valorous Crown of Faith",
+    "Valorous Gloves of Faith",
+    "Valorous Leggings of Faith",
+    "Valorous Robe of Faith",
+    "Valorous Shoulderpads of Faith"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Prayer of Mending will jump an additional time."
+    ],
+    [
+     4,
+     "The cost of your Greater Heal is reduced by 5%."
+    ]
+   ]
+  },
+  "Valorous Scourgeborne Battlegear": {
+   "pieces": [
+    "Valorous Scourgeborne Battleplate",
+    "Valorous Scourgeborne Gauntlets",
+    "Valorous Scourgeborne Helmet",
+    "Valorous Scourgeborne Legplates",
+    "Valorous Scourgeborne Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical strike chance of your Obliterate, Scourge Strike, and Death Strike abilities by 5%."
+    ],
+    [
+     4,
+     "Your Obliterate, Scourge Strike, and Death Strike generate an additional 5 Runic Power when used."
+    ]
+   ]
+  },
+  "Valorous Scourgeborne Plate": {
+   "pieces": [
+    "Valorous Scourgeborne Chestguard",
+    "Valorous Scourgeborne Faceguard",
+    "Valorous Scourgeborne Handguards",
+    "Valorous Scourgeborne Legguards",
+    "Valorous Scourgeborne Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical strike chance of your Plague Strike by 10%."
+    ],
+    [
+     4,
+     "Increases the duration of your Icebound Fortitude by 3 seconds."
+    ]
+   ]
+  }
+ },
+ "items": {
+  "40415": "Valorous Frostfire Garb",
+  "40416": "Valorous Frostfire Garb",
+  "40417": "Valorous Frostfire Garb",
+  "40418": "Valorous Frostfire Garb",
+  "40419": "Valorous Frostfire Garb",
+  "40420": "Valorous Plagueheart Garb",
+  "40421": "Valorous Plagueheart Garb",
+  "40422": "Valorous Plagueheart Garb",
+  "40423": "Valorous Plagueheart Garb",
+  "40424": "Valorous Plagueheart Garb",
+  "40445": "Valorous Regalia of Faith",
+  "40447": "Valorous Regalia of Faith",
+  "40448": "Valorous Regalia of Faith",
+  "40449": "Valorous Regalia of Faith",
+  "40450": "Valorous Regalia of Faith",
+  "40454": "Valorous Garb of Faith",
+  "40456": "Valorous Garb of Faith",
+  "40457": "Valorous Garb of Faith",
+  "40458": "Valorous Garb of Faith",
+  "40459": "Valorous Garb of Faith",
+  "40460": "Valorous Dreamwalker Regalia",
+  "40461": "Valorous Dreamwalker Regalia",
+  "40462": "Valorous Dreamwalker Regalia",
+  "40463": "Valorous Dreamwalker Regalia",
+  "40465": "Valorous Dreamwalker Regalia",
+  "40466": "Valorous Dreamwalker Garb",
+  "40467": "Valorous Dreamwalker Garb",
+  "40468": "Valorous Dreamwalker Garb",
+  "40469": "Valorous Dreamwalker Garb",
+  "40470": "Valorous Dreamwalker Garb",
+  "40471": "Valorous Dreamwalker Battlegear",
+  "40472": "Valorous Dreamwalker Battlegear",
+  "40473": "Valorous Dreamwalker Battlegear",
+  "40493": "Valorous Dreamwalker Battlegear",
+  "40494": "Valorous Dreamwalker Battlegear",
+  "40495": "Valorous Bonescythe Battlegear",
+  "40496": "Valorous Bonescythe Battlegear",
+  "40499": "Valorous Bonescythe Battlegear",
+  "40500": "Valorous Bonescythe Battlegear",
+  "40502": "Valorous Bonescythe Battlegear",
+  "40503": "Valorous Cryptstalker Battlegear",
+  "40504": "Valorous Cryptstalker Battlegear",
+  "40505": "Valorous Cryptstalker Battlegear",
+  "40506": "Valorous Cryptstalker Battlegear",
+  "40507": "Valorous Cryptstalker Battlegear",
+  "40508": "Valorous Earthshatter Regalia",
+  "40509": "Valorous Earthshatter Regalia",
+  "40510": "Valorous Earthshatter Regalia",
+  "40512": "Valorous Earthshatter Regalia",
+  "40513": "Valorous Earthshatter Regalia",
+  "40514": "Valorous Earthshatter Garb",
+  "40515": "Valorous Earthshatter Garb",
+  "40516": "Valorous Earthshatter Garb",
+  "40517": "Valorous Earthshatter Garb",
+  "40518": "Valorous Earthshatter Garb",
+  "40520": "Valorous Earthshatter Battlegear",
+  "40521": "Valorous Earthshatter Battlegear",
+  "40522": "Valorous Earthshatter Battlegear",
+  "40523": "Valorous Earthshatter Battlegear",
+  "40524": "Valorous Earthshatter Battlegear",
+  "40525": "Valorous Dreadnaught Battlegear",
+  "40527": "Valorous Dreadnaught Battlegear",
+  "40528": "Valorous Dreadnaught Battlegear",
+  "40529": "Valorous Dreadnaught Battlegear",
+  "40530": "Valorous Dreadnaught Battlegear",
+  "40544": "Valorous Dreadnaught Plate",
+  "40545": "Valorous Dreadnaught Plate",
+  "40546": "Valorous Dreadnaught Plate",
+  "40547": "Valorous Dreadnaught Plate",
+  "40548": "Valorous Dreadnaught Plate",
+  "40550": "Valorous Scourgeborne Battlegear",
+  "40552": "Valorous Scourgeborne Battlegear",
+  "40554": "Valorous Scourgeborne Battlegear",
+  "40556": "Valorous Scourgeborne Battlegear",
+  "40557": "Valorous Scourgeborne Battlegear",
+  "40559": "Valorous Scourgeborne Plate",
+  "40563": "Valorous Scourgeborne Plate",
+  "40565": "Valorous Scourgeborne Plate",
+  "40567": "Valorous Scourgeborne Plate",
+  "40568": "Valorous Scourgeborne Plate",
+  "40569": "Valorous Redemption Regalia",
+  "40570": "Valorous Redemption Regalia",
+  "40571": "Valorous Redemption Regalia",
+  "40572": "Valorous Redemption Regalia",
+  "40573": "Valorous Redemption Regalia",
+  "40574": "Valorous Redemption Battlegear",
+  "40575": "Valorous Redemption Battlegear",
+  "40576": "Valorous Redemption Battlegear",
+  "40577": "Valorous Redemption Battlegear",
+  "40578": "Valorous Redemption Battlegear",
+  "40579": "Valorous Redemption Plate",
+  "40580": "Valorous Redemption Plate",
+  "40581": "Valorous Redemption Plate",
+  "40583": "Valorous Redemption Plate",
+  "40584": "Valorous Redemption Plate"
+ }
+}

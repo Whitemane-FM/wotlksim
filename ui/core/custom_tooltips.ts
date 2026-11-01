@@ -5,7 +5,9 @@
 // document-level hover handler shows our own tooltip for those links everywhere
 // (gear slots, item lists, glyph picker, ...).
 
+import upgradeChainData from '../../assets/db_inputs/wotlk_upgrade_chains.json';
 import variantEffects from '../../assets/db_inputs/wotlk_variant_effects.json';
+import setTooltipData from '../../assets/db_inputs/wotlk_set_tooltips.json';
 import { getUpgradeChainBase, getUpgradeLevel, isUpgradeVersion } from './upgrades.js';
 
 // Special effect lines (procs, use effects) of upgrade levels and epic versions, taken from
@@ -18,6 +20,29 @@ interface CustomTooltip {
 	name: string;
 	quality: 'legendary' | 'epic' | 'common';
 	lines: Array<Line | { text: string; color: 'green' | 'gray' | 'yellow' | 'blue' } | { socket: string }>;
+	set?: ItemSetTooltip;
+}
+
+// Item set of a set piece: its pieces and bonuses, from the base item's Wowhead tooltip
+// (tools/gen_variant_items.py). Upgrade levels, epic versions and original item level
+// versions keep the set of their base item.
+interface ItemSetTooltip {
+	name: string;
+	pieces: Array<string>;
+	bonuses: Array<[number, string]>;
+}
+const SET_TOOLTIPS = setTooltipData as unknown as {
+	sets: Record<string, { pieces: Array<string>; bonuses: Array<[number, string]> }>;
+	items: Record<string, string>;
+};
+const EPIC_VARIANT_BASES = new Map<number, number>(upgradeChainData.epicVariants.map((pair): [number, number] => [pair[1], pair[0]]));
+
+function getItemSet(itemId: number): ItemSetTooltip | undefined {
+	const baseId =
+		itemId > BASE_VERSION_ID_OFFSET ? itemId - BASE_VERSION_ID_OFFSET : EPIC_VARIANT_BASES.get(itemId) ?? getUpgradeChainBase(itemId);
+	const setName = SET_TOOLTIPS.items[String(baseId)];
+	const set = setName ? SET_TOOLTIPS.sets[setName] : undefined;
+	return set ? { name: setName, pieces: set.pieces, bonuses: set.bonuses } : undefined;
 }
 
 // A gem socket line: shows the socket icon, or the socketed gem when one is equipped.
@@ -543,7 +568,13 @@ export function setCustomTooltipGems(
 	enchantName?: string,
 	enchantStats?: Array<number>,
 	socketBonusActive?: boolean,
+	equippedItemNames?: Array<string>,
 ) {
+	if (equippedItemNames?.length) {
+		elem.dataset.wotlksimEquipped = equippedItemNames.join('|');
+	} else {
+		delete elem.dataset.wotlksimEquipped;
+	}
 	if (gemIds.some(id => id)) {
 		elem.dataset.wotlksimGems = gemIds.join(':');
 	} else {
@@ -710,7 +741,7 @@ function buildGenericTooltip(itemId: number): CustomTooltip | null {
 		lines.push({ text: `Original item level version. Special effects as on the item level ${original.ilvl} version.`, color: 'gray' });
 	}
 
-	return { name: item.name, quality: QUALITY_NAMES[item.quality] || 'epic', lines };
+	return { name: item.name, quality: QUALITY_NAMES[item.quality] || 'epic', lines, set: getItemSet(itemId) };
 }
 
 export function customItemUrl(itemId: number): string {
@@ -728,7 +759,28 @@ const isSocketLine = (line: CustomTooltip['lines'][number]) => typeof line === '
 const isSocketBonusLine = (line: CustomTooltip['lines'][number]) =>
 	typeof line === 'object' && !Array.isArray(line) && 'text' in line && line.text.startsWith('Socket Bonus:');
 
-function renderTooltip(tooltip: CustomTooltip, gemIds: Array<number>, enchantText?: string, socketBonusActive?: boolean): string {
+function renderSet(set: ItemSetTooltip, equippedItemNames: Array<string>): string {
+	const equipped = new Set(equippedItemNames);
+	const count = set.pieces.filter(piece => equipped.has(piece)).length;
+	let html = `<div style="margin-top:0.8em;color:${LINE_COLORS.yellow}">${escapeHtml(set.name)} (${count}/${set.pieces.length})</div>`;
+	html += '<div style="padding-left:0.8em">';
+	for (const piece of set.pieces) {
+		html += `<div style="color:${equipped.has(piece) ? '#ffffa0' : LINE_COLORS.gray}">${escapeHtml(piece)}</div>`;
+	}
+	html += '</div><div style="margin-top:0.8em">';
+	for (const [pieces, text] of set.bonuses) {
+		html += `<div style="color:${count >= pieces ? LINE_COLORS.green : LINE_COLORS.gray}">(${pieces}) Set: ${escapeHtml(text)}</div>`;
+	}
+	return html + '</div>';
+}
+
+function renderTooltip(
+	tooltip: CustomTooltip,
+	gemIds: Array<number>,
+	enchantText?: string,
+	socketBonusActive?: boolean,
+	equippedItemNames: Array<string> = [],
+): string {
 	let html = `<div style="color:${QUALITY_COLORS[tooltip.quality]};font-size:1.05em;font-weight:600">${escapeHtml(tooltip.name)}</div>`;
 
 	// The enchant goes below the item's stats and above its sockets (as in game): before the
@@ -798,6 +850,9 @@ function renderTooltip(tooltip: CustomTooltip, gemIds: Array<number>, enchantTex
 	if (extraGemsIdx == tooltip.lines.length) {
 		html += extraGemsHtml();
 	}
+	if (tooltip.set) {
+		html += renderSet(tooltip.set, equippedItemNames);
+	}
 	return html;
 }
 
@@ -856,7 +911,8 @@ function install() {
 		if (!tooltip) return;
 		const elem = getTooltipElem();
 		const gemIds = (anchor.dataset.wotlksimGems || '').split(':').map(Number);
-		elem.innerHTML = renderTooltip(tooltip, gemIds, anchor.dataset.wotlksimEnchant, anchor.dataset.wotlksimSocketBonus == '1');
+		const equippedItemNames = (anchor.dataset.wotlksimEquipped || '').split('|').filter(name => name);
+		elem.innerHTML = renderTooltip(tooltip, gemIds, anchor.dataset.wotlksimEnchant, anchor.dataset.wotlksimSocketBonus == '1', equippedItemNames);
 		elem.style.display = 'block';
 		positionTooltip(elem, event);
 	});

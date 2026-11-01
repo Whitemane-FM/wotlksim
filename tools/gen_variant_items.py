@@ -51,6 +51,60 @@ def special_effect_lines(tooltip_html):
     return lines
 
 
+SET_HEADER = re.compile(r'<a href="/wotlk/item-set=[^"]*" class="q">([^<]*)</a> \((\d+)/(\d+)\)')
+SET_PIECE = re.compile(r'<a href="/wotlk/item=\d+[^"]*">([^<]*)</a>')
+SET_BONUS = re.compile(r'<span>\((\d+)\) Set : (.*?)</span>(?=<br />|</span>)', re.S)
+
+
+def set_tooltip(tooltip_html):
+    """Set name, pieces and bonuses from a Wowhead item tooltip, or None."""
+    header = SET_HEADER.search(tooltip_html)
+    if not header:
+        return None
+    rest = tooltip_html[header.end():]
+    pieces_html = rest.split('</div>', 1)[0]
+    pieces = [html.unescape(name) for name in SET_PIECE.findall(pieces_html)]
+    bonuses = [[int(n), html.unescape(re.sub(r'<[^>]+>', '', text)).strip()] for n, text in SET_BONUS.findall(rest)]
+    return {'name': html.unescape(header.group(1)), 'pieces': pieces, 'bonuses': bonuses}
+
+
+def write_set_tooltips(base_of):
+    """Set names, pieces and bonuses for the custom tooltips of upgrade levels, epic versions and
+    original item level versions (they keep the set of their base item)."""
+    with open(os.path.join(ROOT, 'assets', 'database', 'db.json')) as f:
+        db_items = {item['id']: item for item in json.load(f)['items']}
+    wanted = set(base_of.values())
+    with open(os.path.join(INPUTS, 'ulduar_base_items.json')) as f:
+        wanted |= {item['id'] - BASE_VERSION_ID_OFFSET for item in json.load(f)['items']}
+    by_set = {}
+    for item_id in wanted:
+        set_name = db_items.get(item_id, {}).get('setName')
+        if set_name:
+            by_set.setdefault(set_name, set()).add(item_id)
+    item_to_set = {item_id: name for name, ids in by_set.items() for item_id in ids}
+
+    # 10 and 25 player versions of a set share the set name in the sim, but their pieces have
+    # different names (Heroes' / Valorous), so every item points to its own displayed set.
+    sets = {}
+    items = {}
+    with open(os.path.join(INPUTS, 'wowhead_item_tooltips.csv')) as f:
+        for line in f:
+            item_id, _, data = line.partition(',')
+            if not item_id.isdigit() or int(item_id) not in item_to_set:
+                continue
+            parsed = set_tooltip(json.loads(data).get('tooltip', ''))
+            if parsed and parsed['pieces']:
+                sets[parsed['name']] = {'pieces': parsed['pieces'], 'bonuses': parsed['bonuses']}
+                items[item_id] = parsed['name']
+
+    with open(os.path.join(INPUTS, 'wotlk_set_tooltips.json'), 'w') as f:
+        json.dump({'sets': dict(sorted(sets.items())), 'items': dict(sorted(items.items(), key=lambda kv: int(kv[0])))}, f, indent=1)
+    print(f'{len(sets)} displayed sets for {len(items)} items ({len(by_set)} sim item sets)')
+
+
+BASE_VERSION_ID_OFFSET = 10_000_000
+
+
 def main():
     whitemane_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(INPUTS, 'whitemane2_items.json')
     whitemane = {}
@@ -91,6 +145,8 @@ def main():
             effects[str(variant_id)] = texts
         if wm.get('effectScale'):
             scales[variant_id] = wm['effectScale']
+
+    write_set_tooltips(base_of)
 
     with open(os.path.join(INPUTS, 'wotlk_upgrade_items.json'), 'w') as f:
         json.dump(items, f, indent=1)
