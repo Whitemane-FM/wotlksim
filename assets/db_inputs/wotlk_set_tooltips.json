@@ -1,5 +1,271 @@
 {
  "sets": {
+  "Conqueror's Aegis Regalia": {
+   "pieces": [
+    "Conqueror's Aegis Gloves",
+    "Conqueror's Aegis Greaves",
+    "Conqueror's Aegis Headpiece",
+    "Conqueror's Aegis Spaulders",
+    "Conqueror's Aegis Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Holy Shock critical heals now also place a periodic healing effect on the target, healing for 15% of the Holy Shock's heal amount over 9 sec."
+    ],
+    [
+     4,
+     "Your Sacred Shield can now trigger its effect every 4 sec instead of every 6."
+    ]
+   ]
+  },
+  "Conqueror's Darkruned Battlegear": {
+   "pieces": [
+    "Conqueror's Darkruned Battleplate",
+    "Conqueror's Darkruned Gauntlets",
+    "Conqueror's Darkruned Helmet",
+    "Conqueror's Darkruned Legplates",
+    "Conqueror's Darkruned Shoulderplates"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical strike chance of Death Coil and Frost Strike by 8%."
+    ],
+    [
+     4,
+     "Increases the bonus damage done per disease by 20% on Blood Strike, Heart Strike, Obliterate, and Scourge Strike."
+    ]
+   ]
+  },
+  "Conqueror's Deathbringer Garb": {
+   "pieces": [
+    "Conqueror's Deathbringer Gloves",
+    "Conqueror's Deathbringer Hood",
+    "Conqueror's Deathbringer Leggings",
+    "Conqueror's Deathbringer Robe",
+    "Conqueror's Deathbringer Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Unstable Affliction by 20% and your Immolate by 10%."
+    ],
+    [
+     4,
+     "Increases the critical strike chance of your Shadow Bolt and Incinerate spells by 5%."
+    ]
+   ]
+  },
+  "Conqueror's Kirin Tor Garb": {
+   "pieces": [
+    "Conqueror's Kirin Tor Gauntlets",
+    "Conqueror's Kirin Tor Hood",
+    "Conqueror's Kirin Tor Leggings",
+    "Conqueror's Kirin Tor Shoulderpads",
+    "Conqueror's Kirin Tor Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Arcane Blast, Frostbolt, Frostfire Bolt, and Fireball spells have a chance to grant you 350 spell power for 15 sec. (Proc chance: 25%, 45s cooldown)"
+    ],
+    [
+     4,
+     "You have a chance for the effect of your Missile Barrage, Hot Streak, or Brain Freeze talent not to be consumed when you cast the spells which benefit."
+    ]
+   ]
+  },
+  "Conqueror's Nightsong Battlegear": {
+   "pieces": [
+    "Conqueror's Nightsong Handgrips",
+    "Conqueror's Nightsong Headguard",
+    "Conqueror's Nightsong Legguards",
+    "Conqueror's Nightsong Raiments",
+    "Conqueror's Nightsong Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "The periodic damage dealt by your Rake, Rip, and Lacerate abilities has a chance to cause you to enter a Clearcasting state. (Proc chance: 2%, 15s cooldown)"
+    ],
+    [
+     4,
+     "Increases the duration of Savage Roar and Survival Instinct by 8 sec."
+    ]
+   ]
+  },
+  "Conqueror's Nightsong Garb": {
+   "pieces": [
+    "Conqueror's Nightsong Cover",
+    "Conqueror's Nightsong Gloves",
+    "Conqueror's Nightsong Mantle",
+    "Conqueror's Nightsong Trousers",
+    "Conqueror's Nightsong Vestments"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the bonus granted by Eclipse for Starfire and Wrath by 7%."
+    ],
+    [
+     4,
+     "Each time your Insect Swarm deals damage, it has a chance to make your next Starfire cast within 10 sec instant. (Proc chance: 8%)"
+    ]
+   ]
+  },
+  "Conqueror's Nightsong Regalia": {
+   "pieces": [
+    "Conqueror's Nightsong Handguards",
+    "Conqueror's Nightsong Headpiece",
+    "Conqueror's Nightsong Leggings",
+    "Conqueror's Nightsong Robe",
+    "Conqueror's Nightsong Spaulders"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the healing done by your Swiftmend spell by 10%."
+    ],
+    [
+     4,
+     "Your Rejuvenation spell also provides an instant heal for your target."
+    ]
+   ]
+  },
+  "Conqueror's Sanctification Garb": {
+   "pieces": [
+    "Conqueror's Circlet of Sanctification",
+    "Conqueror's Handwraps of Sanctification",
+    "Conqueror's Mantle of Sanctification",
+    "Conqueror's Pants of Sanctification",
+    "Conqueror's Raiments of Sanctification"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Devouring Plague by 15%."
+    ],
+    [
+     4,
+     "Your Mind Blast also grants you 240 haste rating for 4 sec."
+    ]
+   ]
+  },
+  "Conqueror's Sanctification Regalia": {
+   "pieces": [
+    "Conqueror's Cowl of Sanctification",
+    "Conqueror's Gloves of Sanctification",
+    "Conqueror's Leggings of Sanctification",
+    "Conqueror's Robe of Sanctification",
+    "Conqueror's Shoulderpads of Sanctification"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the critical heal chance of your Prayer of Healing by 10%."
+    ],
+    [
+     4,
+     "Casting Power Word: Shield also grants you 250 spell power for 5 sec."
+    ]
+   ]
+  },
+  "Conqueror's Scourgestalker Battlegear": {
+   "pieces": [
+    "Conqueror's Scourgestalker Handguards",
+    "Conqueror's Scourgestalker Headpiece",
+    "Conqueror's Scourgestalker Legguards",
+    "Conqueror's Scourgestalker Spaulders",
+    "Conqueror's Scourgestalker Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by your Serpent Sting by 10%."
+    ],
+    [
+     4,
+     "Your Steady Shot has a chance to grant you 600 attack power for 15 sec. (Proc chance: 10%, 45s cooldown)"
+    ]
+   ]
+  },
+  "Conqueror's Terrorblade Battlegear": {
+   "pieces": [
+    "Conqueror's Terrorblade Breastplate",
+    "Conqueror's Terrorblade Gauntlets",
+    "Conqueror's Terrorblade Helmet",
+    "Conqueror's Terrorblade Legplates",
+    "Conqueror's Terrorblade Pauldrons"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Deadly Poison causes you to gain 1 energy each time it deals damage."
+    ],
+    [
+     4,
+     "Increases the damage done by your Rupture by 20%."
+    ]
+   ]
+  },
+  "Conqueror's Worldbreaker Battlegear": {
+   "pieces": [
+    "Conqueror's Worldbreaker Chestguard",
+    "Conqueror's Worldbreaker Faceguard",
+    "Conqueror's Worldbreaker Grips",
+    "Conqueror's Worldbreaker Shoulderguards",
+    "Conqueror's Worldbreaker War-Kilt"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the damage done by Lava Lash and Stormstrike by 20%."
+    ],
+    [
+     4,
+     "Increases the frequency of Maelstrom Weapon being triggered by your melee weapon attacks by 20%."
+    ]
+   ]
+  },
+  "Conqueror's Worldbreaker Garb": {
+   "pieces": [
+    "Conqueror's Worldbreaker Gloves",
+    "Conqueror's Worldbreaker Hauberk",
+    "Conqueror's Worldbreaker Helm",
+    "Conqueror's Worldbreaker Kilt",
+    "Conqueror's Worldbreaker Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases periodic damage done by your Flame Shock ability by 20%."
+    ],
+    [
+     4,
+     "Your critical strikes from Lightning Bolt cause the target to take nature damage equal to 8% of the Lightning Bolt's damage over 4 sec."
+    ]
+   ]
+  },
+  "Conqueror's Worldbreaker Regalia": {
+   "pieces": [
+    "Conqueror's Worldbreaker Handguards",
+    "Conqueror's Worldbreaker Headpiece",
+    "Conqueror's Worldbreaker Legguards",
+    "Conqueror's Worldbreaker Spaulders",
+    "Conqueror's Worldbreaker Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Reduces the cooldown on Riptide by 1 sec."
+    ],
+    [
+     4,
+     "Reduces the cast time of Chain Heal by 0.2 sec."
+    ]
+   ]
+  },
   "Valorous Bonescythe Battlegear": {
    "pieces": [
     "Valorous Bonescythe Breastplate",
@@ -228,6 +494,82 @@
     ]
    ]
   },
+  "Valorous Kirin'dor Garb": {
+   "pieces": [
+    "Valorous Kirin Tor Gauntlets",
+    "Valorous Kirin Tor Hood",
+    "Valorous Kirin Tor Leggings",
+    "Valorous Kirin Tor Shoulderpads",
+    "Valorous Kirin Tor Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Your Arcane Blast, Frostbolt, Frostfire Bolt, and Fireball spells have a chance to grant you 350 spell power for 15 sec. (Proc chance: 25%, 45s cooldown)"
+    ],
+    [
+     4,
+     "You have a chance for the effect of your Missile Barrage, Hot Streak, or Brain Freeze talent not to be consumed when you cast the spells which benefit."
+    ]
+   ]
+  },
+  "Valorous Nightsong Battlegear": {
+   "pieces": [
+    "Valorous Nightsong Handgrips",
+    "Valorous Nightsong Headguard",
+    "Valorous Nightsong Legguards",
+    "Valorous Nightsong Raiments",
+    "Valorous Nightsong Shoulderpads"
+   ],
+   "bonuses": [
+    [
+     2,
+     "The periodic damage dealt by your Rake, Rip, and Lacerate abilities has a chance to cause you to enter a Clearcasting state. (Proc chance: 2%, 15s cooldown)"
+    ],
+    [
+     4,
+     "Increases the duration of Savage Roar and Survival Instinct by 8 sec."
+    ]
+   ]
+  },
+  "Valorous Nightsong Garb": {
+   "pieces": [
+    "Valorous Nightsong Cover",
+    "Valorous Nightsong Gloves",
+    "Valorous Nightsong Mantle",
+    "Valorous Nightsong Trousers",
+    "Valorous Nightsong Vestments"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the bonus granted by Eclipse for Starfire and Wrath by 7%."
+    ],
+    [
+     4,
+     "Each time your Insect Swarm deals damage, it has a chance to make your next Starfire cast within 10 sec instant. (Proc chance: 8%)"
+    ]
+   ]
+  },
+  "Valorous Nightsong Regalia": {
+   "pieces": [
+    "Valorous Nightsong Handguards",
+    "Valorous Nightsong Headpiece",
+    "Valorous Nightsong Leggings",
+    "Valorous Nightsong Robe",
+    "Valorous Nightsong Spaulders"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases the healing done by your Swiftmend spell by 10%."
+    ],
+    [
+     4,
+     "Your Rejuvenation spell also provides an instant heal for your target."
+    ]
+   ]
+  },
   "Valorous Plagueheart Garb": {
    "pieces": [
     "Valorous Plagueheart Circlet",
@@ -360,6 +702,25 @@
      "Increases the duration of your Icebound Fortitude by 3 seconds."
     ]
    ]
+  },
+  "Valorous Worldbreaker Regalia": {
+   "pieces": [
+    "Valorous Worldbreaker Handguards",
+    "Valorous Worldbreaker Headpiece",
+    "Valorous Worldbreaker Legguards",
+    "Valorous Worldbreaker Spaulders",
+    "Valorous Worldbreaker Tunic"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Reduces the cooldown on Riptide by 1 sec."
+    ],
+    [
+     4,
+     "Reduces the cast time of Chain Heal by 0.2 sec."
+    ]
+   ]
   }
  },
  "items": {
@@ -457,6 +818,101 @@
   "40580": "Valorous Redemption Plate",
   "40581": "Valorous Redemption Plate",
   "40583": "Valorous Redemption Plate",
-  "40584": "Valorous Redemption Plate"
+  "40584": "Valorous Redemption Plate",
+  "45345": "Valorous Nightsong Regalia",
+  "45346": "Valorous Nightsong Regalia",
+  "45347": "Valorous Nightsong Regalia",
+  "45348": "Valorous Nightsong Regalia",
+  "45349": "Valorous Nightsong Regalia",
+  "45351": "Valorous Nightsong Garb",
+  "45352": "Valorous Nightsong Garb",
+  "45353": "Valorous Nightsong Garb",
+  "45354": "Valorous Nightsong Garb",
+  "45355": "Valorous Nightsong Battlegear",
+  "45356": "Valorous Nightsong Battlegear",
+  "45357": "Valorous Nightsong Battlegear",
+  "45358": "Valorous Nightsong Battlegear",
+  "45359": "Valorous Nightsong Battlegear",
+  "45365": "Valorous Kirin'dor Garb",
+  "45367": "Valorous Kirin'dor Garb",
+  "45368": "Valorous Kirin'dor Garb",
+  "45369": "Valorous Kirin'dor Garb",
+  "45401": "Valorous Worldbreaker Regalia",
+  "45402": "Valorous Worldbreaker Regalia",
+  "45403": "Valorous Worldbreaker Regalia",
+  "45404": "Valorous Worldbreaker Regalia",
+  "45405": "Valorous Worldbreaker Regalia",
+  "46111": "Conqueror's Darkruned Battlegear",
+  "46113": "Conqueror's Darkruned Battlegear",
+  "46115": "Conqueror's Darkruned Battlegear",
+  "46116": "Conqueror's Darkruned Battlegear",
+  "46117": "Conqueror's Darkruned Battlegear",
+  "46123": "Conqueror's Terrorblade Battlegear",
+  "46124": "Conqueror's Terrorblade Battlegear",
+  "46125": "Conqueror's Terrorblade Battlegear",
+  "46126": "Conqueror's Terrorblade Battlegear",
+  "46127": "Conqueror's Terrorblade Battlegear",
+  "46129": "Conqueror's Kirin Tor Garb",
+  "46130": "Conqueror's Kirin Tor Garb",
+  "46131": "Valorous Kirin'dor Garb",
+  "46132": "Conqueror's Kirin Tor Garb",
+  "46133": "Conqueror's Kirin Tor Garb",
+  "46134": "Conqueror's Kirin Tor Garb",
+  "46135": "Conqueror's Deathbringer Garb",
+  "46136": "Conqueror's Deathbringer Garb",
+  "46137": "Conqueror's Deathbringer Garb",
+  "46139": "Conqueror's Deathbringer Garb",
+  "46140": "Conqueror's Deathbringer Garb",
+  "46141": "Conqueror's Scourgestalker Battlegear",
+  "46142": "Conqueror's Scourgestalker Battlegear",
+  "46143": "Conqueror's Scourgestalker Battlegear",
+  "46144": "Conqueror's Scourgestalker Battlegear",
+  "46145": "Conqueror's Scourgestalker Battlegear",
+  "46157": "Conqueror's Nightsong Battlegear",
+  "46158": "Conqueror's Nightsong Battlegear",
+  "46159": "Conqueror's Nightsong Battlegear",
+  "46160": "Conqueror's Nightsong Battlegear",
+  "46161": "Conqueror's Nightsong Battlegear",
+  "46163": "Conqueror's Sanctification Garb",
+  "46165": "Conqueror's Sanctification Garb",
+  "46168": "Conqueror's Sanctification Garb",
+  "46170": "Conqueror's Sanctification Garb",
+  "46172": "Conqueror's Sanctification Garb",
+  "46178": "Conqueror's Aegis Regalia",
+  "46179": "Conqueror's Aegis Regalia",
+  "46180": "Conqueror's Aegis Regalia",
+  "46181": "Conqueror's Aegis Regalia",
+  "46182": "Conqueror's Aegis Regalia",
+  "46183": "Conqueror's Nightsong Regalia",
+  "46184": "Conqueror's Nightsong Regalia",
+  "46185": "Conqueror's Nightsong Regalia",
+  "46186": "Conqueror's Nightsong Regalia",
+  "46187": "Conqueror's Nightsong Regalia",
+  "46188": "Conqueror's Sanctification Regalia",
+  "46189": "Conqueror's Nightsong Garb",
+  "46190": "Conqueror's Sanctification Regalia",
+  "46191": "Conqueror's Nightsong Garb",
+  "46192": "Conqueror's Nightsong Garb",
+  "46193": "Conqueror's Sanctification Regalia",
+  "46194": "Conqueror's Nightsong Garb",
+  "46195": "Conqueror's Sanctification Regalia",
+  "46196": "Conqueror's Nightsong Garb",
+  "46197": "Conqueror's Sanctification Regalia",
+  "46198": "Conqueror's Worldbreaker Regalia",
+  "46199": "Conqueror's Worldbreaker Regalia",
+  "46200": "Conqueror's Worldbreaker Battlegear",
+  "46201": "Conqueror's Worldbreaker Regalia",
+  "46202": "Conqueror's Worldbreaker Regalia",
+  "46203": "Conqueror's Worldbreaker Battlegear",
+  "46204": "Conqueror's Worldbreaker Regalia",
+  "46205": "Conqueror's Worldbreaker Battlegear",
+  "46206": "Conqueror's Worldbreaker Garb",
+  "46207": "Conqueror's Worldbreaker Garb",
+  "46208": "Conqueror's Worldbreaker Battlegear",
+  "46209": "Conqueror's Worldbreaker Garb",
+  "46210": "Conqueror's Worldbreaker Garb",
+  "46211": "Conqueror's Worldbreaker Garb",
+  "46212": "Conqueror's Worldbreaker Battlegear",
+  "46313": "Valorous Nightsong Garb"
  }
 }
