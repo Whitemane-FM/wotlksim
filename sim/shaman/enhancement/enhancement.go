@@ -50,6 +50,10 @@ func NewEnhancementShaman(character *core.Character, options *proto.Player) *Enh
 		AutoSwingMelee: true,
 	})
 
+	// wotlksim: Whitemane +6% auto attack damage for Enhancement shamans.
+	enh.AutoAttacks.MHConfig().DamageMultiplier *= 1.06
+	enh.AutoAttacks.OHConfig().DamageMultiplier *= 1.06
+
 	enh.ApplySyncType(enhOptions.Options.SyncType)
 	enh.ApplyFlametongueImbue(enh.getImbueProcMask(proto.ShamanImbue_FlametongueWeapon), false)
 	enh.ApplyFlametongueImbue(enh.getImbueProcMask(proto.ShamanImbue_FlametongueWeaponDownrank), true)
@@ -91,6 +95,9 @@ func (enh *EnhancementShaman) GetShaman() *shaman.Shaman {
 
 func (enh *EnhancementShaman) Initialize() {
 	enh.Shaman.Initialize()
+	// wotlksim: Whitemane Enhancement shamans cast Fire Nova about 5% more often. The rotation
+	// is unchanged; casts, hits and damage are counted x1.05 at the end of each iteration.
+	enh.FireNova.MetricsScale = 1.05
 	// In the Initialize due to frost brand adding the aura to the enemy
 	enh.RegisterFrostbrandImbue(enh.getImbueProcMask(proto.ShamanImbue_FrostbrandWeapon))
 	enh.RegisterFlametongueImbue(enh.getImbueProcMask(proto.ShamanImbue_FlametongueWeapon), false)

@@ -112,7 +112,8 @@ func (shaman *Shaman) registerStormstrikeSpell() {
 		},
 
 		ThreatMultiplier: 1,
-		DamageMultiplier: core.TernaryFloat64(shaman.HasSetBonus(ItemSetWorldbreakerBattlegear, 2), 1.2, 1),
+		// wotlksim: Whitemane +15% Stormstrike damage.
+		DamageMultiplier: core.TernaryFloat64(shaman.HasSetBonus(ItemSetWorldbreakerBattlegear, 2), 1.2, 1) * 1.15,
 		CritMultiplier:   shaman.DefaultMeleeCritMultiplier(),
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {

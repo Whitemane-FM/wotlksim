@@ -43,6 +43,8 @@ func (shaman *Shaman) NewFireElemental(bonusSpellPower float64) *FireElemental {
 		},
 		AutoSwingMelee: true,
 	})
+	// wotlksim: Whitemane +10% Greater Fire Elemental auto attack damage.
+	fireElemental.AutoAttacks.MHConfig().DamageMultiplier *= 1.10
 	fireElemental.AddStatDependency(stats.Intellect, stats.SpellCrit, core.CritRatingPerCritChance/212)
 
 	if bonusSpellPower > 0 {
