@@ -85,11 +85,13 @@ func (shaman *Shaman) registerFlameShockSpell(shockTimer *core.Timer) {
 	// Lava Burst's cooldown and make the next Lava Burst instant.
 	var doomhammerAura *core.Aura
 	if id := shaman.MainHand().ID; id == DoomhammerID || id == Doomhammer2ID {
+		var gainedAt time.Duration
 		doomhammerAura = shaman.RegisterAura(core.Aura{
 			Label:    "Doomhammer",
 			ActionID: core.ActionID{ItemID: DoomhammerID},
 			Duration: core.NeverExpires,
 			OnGain: func(aura *core.Aura, sim *core.Simulation) {
+				gainedAt = sim.CurrentTime
 				shaman.LavaBurst.CD.Reset()
 				shaman.LavaBurst.CastTimeMultiplier -= 1
 			},
@@ -97,7 +99,9 @@ func (shaman *Shaman) registerFlameShockSpell(shockTimer *core.Timer) {
 				shaman.LavaBurst.CastTimeMultiplier += 1
 			},
 			OnCastComplete: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell) {
-				if spell == shaman.LavaBurst {
+				// Only a Lava Burst started after the proc uses it up. A proc during a
+				// Lava Burst cast keeps the instant cast for the next one.
+				if spell == shaman.LavaBurst && sim.CurrentTime-spell.CurCast.CastTime >= gainedAt {
 					aura.Deactivate(sim)
 				}
 			},
