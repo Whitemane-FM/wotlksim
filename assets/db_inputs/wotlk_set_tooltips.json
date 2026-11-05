@@ -380,6 +380,138 @@
     ]
    ]
   },
+  "Duskweaver": {
+   "pieces": [
+    "Duskweave Belt",
+    "Duskweave Boots",
+    "Duskweave Gloves",
+    "Duskweave Cowl",
+    "Duskweave Leggings",
+    "Duskweave Robe",
+    "Duskweave Shoulders",
+    "Duskweave Wristwraps"
+   ],
+   "bonuses": [
+    [
+     2,
+     "Increases your spell power by 18."
+    ],
+    [
+     4,
+     "Increases your Stamina by 25."
+    ]
+   ]
+  },
+  "Eviscerator's Battlegear": {
+   "pieces": [
+    "Eviscerator's Bindings",
+    "Eviscerator's Chestguard",
+    "Eviscerator's Facemask",
+    "Eviscerator's Gauntlets",
+    "Eviscerator's Legguards",
+    "Eviscerator's Shoulderpads",
+    "Eviscerator's Treads",
+    "Eviscerator's Waistguard"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
+    ]
+   ]
+  },
+  "Frostsavage Battlegear": {
+   "pieces": [
+    "Frostsavage Belt",
+    "Frostsavage Boots",
+    "Frostsavage Bracers",
+    "Frostsavage Cowl",
+    "Frostsavage Gloves",
+    "Frostsavage Leggings",
+    "Frostsavage Robe",
+    "Frostsavage Shoulders"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
+    ]
+   ]
+  },
+  "Ornate Saronite Battlegear": {
+   "pieces": [
+    "Ornate Saronite Bracers",
+    "Ornate Saronite Gauntlets",
+    "Ornate Saronite Hauberk",
+    "Ornate Saronite Legplates",
+    "Ornate Saronite Pauldrons",
+    "Ornate Saronite Skullshield",
+    "Ornate Saronite Walkers",
+    "Ornate Saronite Waistguard"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
+    ]
+   ]
+  },
+  "Overcaster Battlegear": {
+   "pieces": [
+    "Overcast Belt",
+    "Overcast Boots",
+    "Overcast Bracers",
+    "Overcast Chestguard",
+    "Overcast Handwraps",
+    "Overcast Headguard",
+    "Overcast Leggings",
+    "Overcast Spaulders"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
+    ]
+   ]
+  },
+  "Savage Saronite Battlegear": {
+   "pieces": [
+    "Savage Saronite Bracers",
+    "Savage Saronite Gauntlets",
+    "Savage Saronite Hauberk",
+    "Savage Saronite Legplates",
+    "Savage Saronite Pauldrons",
+    "Savage Saronite Skullshield",
+    "Savage Saronite Waistguard",
+    "Savage Saronite Walkers"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
+    ]
+   ]
+  },
   "Scourgestalker Battlegear": {
    "pieces": [
     "Scourgestalker Handguards",
@@ -396,6 +528,50 @@
     [
      4,
      "Your Steady Shot has a chance to grant you 600 attack power for 15 sec. (Proc chance: 10%, 45s cooldown)"
+    ]
+   ]
+  },
+  "Stormhide Battlegear": {
+   "pieces": [
+    "Stormhide Belt",
+    "Stormhide Crown",
+    "Stormhide Grips",
+    "Stormhide Hauberk",
+    "Stormhide Legguards",
+    "Stormhide Shoulders",
+    "Stormhide Stompers",
+    "Stormhide Wristguards"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
+    ]
+   ]
+  },
+  "Swiftarrow Battlegear": {
+   "pieces": [
+    "Swiftarrow Belt",
+    "Swiftarrow Boots",
+    "Swiftarrow Bracers",
+    "Swiftarrow Gauntlets",
+    "Swiftarrow Hauberk",
+    "Swiftarrow Helm",
+    "Swiftarrow Leggings",
+    "Swiftarrow Shoulderguards"
+   ],
+   "bonuses": [
+    [
+     4,
+     "+75 Stamina."
+    ],
+    [
+     6,
+     "+50 Resilience Rating."
     ]
    ]
   },
@@ -1180,6 +1356,65 @@
   "40581": "Valorous Redemption Plate",
   "40583": "Valorous Redemption Plate",
   "40584": "Valorous Redemption Plate",
+  "41347": "Savage Saronite Battlegear",
+  "41348": "Savage Saronite Battlegear",
+  "41349": "Savage Saronite Battlegear",
+  "41350": "Savage Saronite Battlegear",
+  "41351": "Savage Saronite Battlegear",
+  "41352": "Savage Saronite Battlegear",
+  "41353": "Savage Saronite Battlegear",
+  "41354": "Savage Saronite Battlegear",
+  "41516": "Frostsavage Battlegear",
+  "41553": "Duskweaver",
+  "41554": "Duskweaver",
+  "41555": "Duskweaver",
+  "42723": "Ornate Saronite Battlegear",
+  "42724": "Ornate Saronite Battlegear",
+  "42725": "Ornate Saronite Battlegear",
+  "42726": "Ornate Saronite Battlegear",
+  "42727": "Ornate Saronite Battlegear",
+  "42728": "Ornate Saronite Battlegear",
+  "42729": "Ornate Saronite Battlegear",
+  "42730": "Ornate Saronite Battlegear",
+  "43260": "Eviscerator's Battlegear",
+  "43261": "Overcaster Battlegear",
+  "43262": "Overcaster Battlegear",
+  "43263": "Overcaster Battlegear",
+  "43264": "Overcaster Battlegear",
+  "43265": "Overcaster Battlegear",
+  "43266": "Overcaster Battlegear",
+  "43271": "Overcaster Battlegear",
+  "43273": "Overcaster Battlegear",
+  "43433": "Eviscerator's Battlegear",
+  "43434": "Eviscerator's Battlegear",
+  "43435": "Eviscerator's Battlegear",
+  "43436": "Eviscerator's Battlegear",
+  "43437": "Eviscerator's Battlegear",
+  "43438": "Eviscerator's Battlegear",
+  "43439": "Eviscerator's Battlegear",
+  "43442": "Swiftarrow Battlegear",
+  "43443": "Swiftarrow Battlegear",
+  "43444": "Swiftarrow Battlegear",
+  "43445": "Swiftarrow Battlegear",
+  "43446": "Swiftarrow Battlegear",
+  "43447": "Swiftarrow Battlegear",
+  "43448": "Swiftarrow Battlegear",
+  "43449": "Swiftarrow Battlegear",
+  "43450": "Stormhide Battlegear",
+  "43451": "Stormhide Battlegear",
+  "43452": "Stormhide Battlegear",
+  "43453": "Stormhide Battlegear",
+  "43454": "Stormhide Battlegear",
+  "43455": "Stormhide Battlegear",
+  "43456": "Stormhide Battlegear",
+  "43457": "Stormhide Battlegear",
+  "43969": "Frostsavage Battlegear",
+  "43970": "Frostsavage Battlegear",
+  "43971": "Frostsavage Battlegear",
+  "43972": "Frostsavage Battlegear",
+  "43973": "Frostsavage Battlegear",
+  "43974": "Frostsavage Battlegear",
+  "43975": "Frostsavage Battlegear",
   "45335": "Valorous Darkruned Plate",
   "45336": "Valorous Darkruned Plate",
   "45337": "Valorous Darkruned Plate",
