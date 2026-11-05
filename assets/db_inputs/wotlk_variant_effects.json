@@ -43,5 +43,90 @@
  ],
  "1207113": [
   "Use: Increases spell power by 396 for 20 sec."
+ ],
+ "1500043": [
+  "Use: Increases attack power by 864 for 20 sec."
+ ],
+ "1500044": [
+  "Use: Increases attack power by 1035 for 20 sec."
+ ],
+ "1500124": [
+  "Equip: When struck in combat has a chance of shielding you in a protective barrier which will reduce damage from each attack by 140.  Lasts 10 secs."
+ ],
+ "1500125": [
+  "Equip: When struck in combat has a chance of shielding you in a protective barrier which will reduce damage from each attack by 140.  Lasts 10 secs."
+ ],
+ "1500184": [
+  "Equip: Your harmful spells have a chance to strike your enemy, dealing 1511 to 2267 shadow damage."
+ ],
+ "1500185": [
+  "Equip: Your harmful spells have a chance to strike your enemy, dealing 1794 to 2692 shadow damage."
+ ],
+ "1500253": [
+  "Equip: Your melee and ranged attacks have a chance to increase your haste rating by 575 for 10 sec."
+ ],
+ "1500254": [
+  "Equip: Your melee and ranged attacks have a chance to increase your haste rating by 683 for 10 sec."
+ ],
+ "1500361": [
+  "Use: Increases maximum health by 3465 for 15 sec."
+ ],
+ "1500362": [
+  "Use: Increases maximum health by 3465 for 15 sec."
+ ],
+ "1500406": [
+  "Equip: Each time you cast a damaging or healing spell, there is chance you will gain up to 282 mana per 5 for 15 sec."
+ ],
+ "1500407": [
+  "Equip: Each time you cast a damaging or healing spell, there is chance you will gain up to 339 mana per 5 for 15 sec."
+ ],
+ "1500412": [
+  "Equip: Your damaging and healing spells have a chance to increase your spell power by 656 for 10 sec."
+ ],
+ "1500413": [
+  "Equip: Your damaging and healing spells have a chance to increase your spell power by 788 for 10 sec."
+ ],
+ "1500508": [
+  "Use: Increases your armor penetration rating by 374 for 20 sec."
+ ],
+ "1500509": [
+  "Use: Increases your armor penetration rating by 449 for 20 sec."
+ ],
+ "1500538": [
+  "Use: For the next 20 sec, your direct heals increase healing received by their target by up to 66.  This effect lasts 10 sec and stacks up to 5 times."
+ ],
+ "1500539": [
+  "Use: For the next 20 sec, your direct heals increase healing received by their target by up to 66.  This effect lasts 10 sec and stacks up to 5 times."
+ ],
+ "1500580": [
+  "Use: Increases spell power by 444 for 20 sec."
+ ],
+ "1500581": [
+  "Use: Increases spell power by 541 for 20 sec."
+ ],
+ "1500637": [
+  "Use: Increases the block value of your shield by 569 for 40 sec."
+ ],
+ "1500638": [
+  "Use: Increases the block value of your shield by 676 for 40 sec."
+ ],
+ "1500640": [
+  "Use: Increases spell power by 443 for 20 sec."
+ ],
+ "1500641": [
+  "Use: Increases spell power by 533 for 20 sec."
+ ],
+ "1500790": [
+  "Equip: Chance on melee or ranged critical strike to increase your armor penetration rating by 767 for 10 sec. (Proc chance: 10%, 57s cooldown)"
+ ],
+ "1500808": [
+  "Use: Increases maximum health by 4649 for 15 sec. Shares cooldown with other Battlemaster's trinkets. (3 Min Cooldown)"
+ ],
+ "1500809": [
+  "Use: Increases your critical strike rating by 1036 for 20 sec. Every time one of your non-periodic spells deals a critical strike, the bonus is reduced by 207 critical strike rating. (3 Min Cooldown)"
+ ],
+ "1500810": [
+  "Equip: You gain 11 mana each time you heal a target with one of your spells. (250ms cooldown)",
+  "Use: Grants 464 haste rating for 20 sec. (2 Min Cooldown)"
  ]
 }

@@ -56,7 +56,24 @@ export function getUpgradeChain(
 ): Array<number> {
 	const chain = UPGRADE_CHAINS.find(c => c.includes(itemId));
 	if (chain) {
-		return chain;
+		// An epic version can have upgrade levels of its own (dungeon items: blue -> epic 200 ->
+		// +1 213 -> +2 232): join the [blue, epic] pair and the epic's level chain into one list.
+		const full = [...chain];
+		for (let changed = true; changed; ) {
+			changed = false;
+			for (const other of UPGRADE_CHAINS) {
+				if (other !== chain && other.some(id => full.includes(id)) && other.some(id => !full.includes(id))) {
+					const joinAt = other.findIndex(id => full.includes(id));
+					const anchor = full.indexOf(other[joinAt]);
+					const before = other.slice(0, joinAt).filter(id => !full.includes(id));
+					const after = other.slice(joinAt + 1).filter(id => !full.includes(id));
+					full.splice(anchor + 1, 0, ...after);
+					full.splice(anchor, 0, ...before);
+					changed = true;
+				}
+			}
+		}
+		return full;
 	}
 
 	const item = getItem?.(itemId);

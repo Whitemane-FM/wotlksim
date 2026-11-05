@@ -51,6 +51,15 @@ def special_effect_lines(tooltip_html):
     return lines
 
 
+EFFECT_AMOUNT = re.compile(r'(?<![\d.])(\d{2,})(?![\d.%])(?! sec)(?! min)(?! seconds)(?! minutes)(?! yards)(?! times)')
+
+
+def scale_effect_text(text, scale):
+    """Scales the effect amounts (numbers of 2+ digits that aren't durations or percentages) of an
+    effect text; used for estimated effect scales."""
+    return EFFECT_AMOUNT.sub(lambda m: str(round(int(m.group(1)) * scale)), text)
+
+
 SET_HEADER = re.compile(r'<a href="/wotlk/item-set=[^"]*" class="q">([^<]*)</a> \((\d+)/(\d+)\)')
 SET_PIECE = re.compile(r'<a href="/wotlk/item=\d+[^"]*">([^<]*)</a>')
 SET_BONUS = re.compile(r'<span>\((\d+)\) Set : (.*?)</span>(?=<br />|</span>)', re.S)
@@ -119,6 +128,16 @@ def main():
     for chain in chains['chains'] + chains['epicVariants']:
         for variant_id in chain[1:]:
             base_of[variant_id] = chain[0]
+    # Upgrade levels of an epic version (dungeon items: blue -> epic 200 -> +1 213 -> +2 232)
+    # use the effect of the original (blue) item, so resolve every variant to its root item.
+    def root_of(item_id):
+        seen = set()
+        while item_id in base_of and item_id not in seen:
+            seen.add(item_id)
+            item_id = base_of[item_id]
+        return item_id
+    chain_parent = dict(base_of)
+    base_of = {variant_id: root_of(variant_id) for variant_id in base_of}
 
     # Epic version stats from the Whitemane 2 export (the upgrade levels already come from it).
     item_fields = set(k for item in items for k in item)
@@ -136,15 +155,31 @@ def main():
             if item_id.isdigit() and int(item_id) in wanted:
                 base_texts[int(item_id)] = special_effect_lines(json.loads(data).get('tooltip', ''))
 
+    # Effect scales estimated from the item's stat budget for versions the Whitemane 2 export
+    # doesn't have (dungeon item upgrade levels read from the game client's item cache).
+    estimated_path = os.path.join(INPUTS, 'wotlk_estimated_effect_scales.json')
+    estimated = {}
+    if os.path.exists(estimated_path):
+        with open(estimated_path) as f:
+            estimated = {int(k): v for k, v in json.load(f).items()}
+
     effects = {}
     scales = {}
     for variant_id, base_id in sorted(base_of.items()):
         wm = whitemane.get(variant_id, {})
-        texts = wm.get('effectTexts') or base_texts.get(base_id) or []
+        scale = wm.get('effectScale') or estimated.get(variant_id)
+        texts = wm.get('effectTexts')
+        if not texts:
+            texts = base_texts.get(base_id) or []
+            parent_texts = whitemane.get(chain_parent.get(variant_id), {}).get('effectTexts')
+            if variant_id in estimated and parent_texts:
+                texts = parent_texts
+            if variant_id in estimated:
+                texts = [scale_effect_text(text, scale / (whitemane.get(chain_parent.get(variant_id), {}).get('effectScale') or 1) if parent_texts else scale) for text in texts]
         if texts:
             effects[str(variant_id)] = texts
-        if wm.get('effectScale'):
-            scales[variant_id] = wm['effectScale']
+        if scale:
+            scales[variant_id] = scale
 
     write_set_tooltips(base_of)
 
