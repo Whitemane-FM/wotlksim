@@ -1069,6 +1069,7 @@ export const specToClass: Record<Spec, Class> = {
 const druidRaces = [
 	Race.RaceTauren,
 	Race.RaceNightElf,
+	Race.RaceTroll, // wotlksim: Troll druids exist on Whitemane
 ];
 const hunterRaces = [
 	Race.RaceBloodElf,

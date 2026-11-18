@@ -194,6 +194,7 @@ func AddBaseStatsCombo(r proto.Race, c proto.Class) {
 func init() {
 	AddBaseStatsCombo(proto.Race_RaceTauren, proto.Class_ClassDruid)
 	AddBaseStatsCombo(proto.Race_RaceNightElf, proto.Class_ClassDruid)
+	AddBaseStatsCombo(proto.Race_RaceTroll, proto.Class_ClassDruid) // wotlksim: Troll druids exist on Whitemane
 
 	AddBaseStatsCombo(proto.Race_RaceDraenei, proto.Class_ClassDeathknight)
 	AddBaseStatsCombo(proto.Race_RaceDwarf, proto.Class_ClassDeathknight)
