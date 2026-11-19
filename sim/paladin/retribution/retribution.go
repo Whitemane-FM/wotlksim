@@ -72,8 +72,8 @@ func (ret *RetributionPaladin) applyWhitemaneBuffs() {
 	ret.AutoAttacks.MHConfig().DamageMultiplier *= 1.08
 	ret.AutoAttacks.MHConfig().BonusCritRating += crit(5)
 
-	// About 6% more auto attacks than the sim gave, compared with a real log: +6% attack speed.
-	ret.PseudoStats.MeleeSpeedMultiplier *= 1.06
+	// More auto attacks than the sim gave, compared with a real log: +3% attack speed.
+	ret.PseudoStats.MeleeSpeedMultiplier *= 1.03
 
 	// Consecration: +6% damage.
 	if ret.Consecration != nil {
