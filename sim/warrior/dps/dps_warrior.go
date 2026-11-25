@@ -97,12 +97,12 @@ func (war *DpsWarrior) Reset(sim *core.Simulation) {
 }
 
 // wotlksim: Whitemane Fury buffs (most talent points in Fury), from a comparison with a real log:
-// +2% damage on everything, Bloodthirst +7% crit chance, Whirlwind +5% crit chance.
+// +3% damage on everything, Bloodthirst +7% crit chance, Whirlwind +5% crit chance.
 func (war *DpsWarrior) applyWhitemaneFuryBuffs() {
 	if war.PrimaryTalentTree != 1 {
 		return
 	}
-	war.PseudoStats.DamageDealtMultiplier *= 1.02
+	war.PseudoStats.DamageDealtMultiplier *= 1.03
 	if war.Bloodthirst != nil {
 		war.Bloodthirst.BonusCritRating += 7 * core.CritRatingPerCritChance
 	}
