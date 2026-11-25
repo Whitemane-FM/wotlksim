@@ -67,7 +67,6 @@ func (war *DpsWarrior) GetWarrior() *warrior.Warrior {
 
 func (war *DpsWarrior) Initialize() {
 	war.Warrior.Initialize()
-	war.applyWhitemaneFuryBuffs()
 
 	if war.Options.UseRecklessness {
 		war.RegisterRecklessnessCD()
@@ -93,22 +92,5 @@ func (war *DpsWarrior) Reset(sim *core.Simulation) {
 		war.Warrior.Reset(sim)
 		war.BattleStanceAura.Activate(sim)
 		war.Stance = warrior.BattleStance
-	}
-}
-
-// wotlksim: Whitemane Fury buffs (most talent points in Fury), from a comparison with a real log:
-// +3% damage on everything, Bloodthirst +7% crit chance, Whirlwind +5% crit chance.
-func (war *DpsWarrior) applyWhitemaneFuryBuffs() {
-	if war.PrimaryTalentTree != 1 {
-		return
-	}
-	war.PseudoStats.DamageDealtMultiplier *= 1.03
-	if war.Bloodthirst != nil {
-		war.Bloodthirst.BonusCritRating += 7 * core.CritRatingPerCritChance
-	}
-	for _, ww := range []*core.Spell{war.Whirlwind, war.WhirlwindOH} {
-		if ww != nil {
-			ww.BonusCritRating += 5 * core.CritRatingPerCritChance
-		}
 	}
 }
