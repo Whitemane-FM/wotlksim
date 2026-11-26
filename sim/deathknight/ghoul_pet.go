@@ -78,9 +78,9 @@ func (dk *Deathknight) NewArmyGhoulPet(_ int) *GhoulPet {
 		ghoulPet.PseudoStats.DamageDealtMultiplier *= frostArmyDamageMultiplier
 	}
 
-	// wotlksim: Army of the Dead ghouls of Unholy DKs (most talent points in Unholy): +18% auto attack damage.
+	// wotlksim: Army of the Dead ghouls of Unholy DKs (most talent points in Unholy): +24% auto attack damage.
 	if dk.PrimaryTalentTree == 2 {
-		ghoulPet.AutoAttacks.MHConfig().DamageMultiplier *= 1.18
+		ghoulPet.AutoAttacks.MHConfig().DamageMultiplier *= 1.24
 	}
 
 	return ghoulPet
