@@ -110,6 +110,14 @@ func (warlock *Warlock) Initialize() {
 	warlock.registerDemonicEmpowermentSpell()
 	warlock.registerMetamorphosisSpell()
 	warlock.registerDarkPactSpell()
+
+	// Whitemane (Demonology): fewer Corruption (-7%), Shadow Bolt and Soul Fire (-4%) casts.
+	// Rotation unchanged; casts, hits and damage are scaled at the end of each iteration.
+	if warlock.PrimaryTalentTree == 1 {
+		warlock.Corruption.MetricsScale = 0.93
+		warlock.ShadowBolt.MetricsScale = 0.96
+		warlock.SoulFire.MetricsScale = 0.96
+	}
 	warlock.registerShadowBurnSpell()
 	warlock.registerSearingPainSpell()
 	warlock.registerInfernoSpell()
