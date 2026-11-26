@@ -57,6 +57,11 @@ func NewDpsDeathknight(character *core.Character, player *proto.Player) *DpsDeat
 		dpsDk.AutoAttacks.OHConfig().DamageMultiplier *= 1.08
 	}
 
+	// wotlksim: Whitemane -1.5% damage for Frost DKs (most talent points in Frost; the DK only, not the pets).
+	if dpsDk.PrimaryTalentTree == 1 {
+		dpsDk.PseudoStats.DamageDealtMultiplier *= 0.985
+	}
+
 	return dpsDk
 }
 
