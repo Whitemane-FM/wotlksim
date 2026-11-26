@@ -78,6 +78,11 @@ func (dk *Deathknight) NewArmyGhoulPet(_ int) *GhoulPet {
 		ghoulPet.PseudoStats.DamageDealtMultiplier *= frostArmyDamageMultiplier
 	}
 
+	// wotlksim: Army of the Dead ghouls of Unholy DKs (most talent points in Unholy): +18% auto attack damage.
+	if dk.PrimaryTalentTree == 2 {
+		ghoulPet.AutoAttacks.MHConfig().DamageMultiplier *= 1.18
+	}
+
 	return ghoulPet
 }
 
@@ -125,6 +130,11 @@ func (dk *Deathknight) NewGhoulPet(permanent bool) *GhoulPet {
 	ghoulPet.AddStatDependency(stats.Strength, stats.AttackPower, 1)
 	ghoulPet.AddStatDependency(stats.Agility, stats.AttackPower, 1)
 	ghoulPet.AddStatDependency(stats.Agility, stats.MeleeCrit, core.CritRatingPerCritChance/85.5)
+
+	// wotlksim: the normal ghoul of Unholy DKs (most talent points in Unholy): +6% auto attack damage.
+	if dk.PrimaryTalentTree == 2 {
+		ghoulPet.AutoAttacks.MHConfig().DamageMultiplier *= 1.06
+	}
 
 	if permanent {
 		core.ApplyPetConsumeEffects(&ghoulPet.Character, dk.Consumes)

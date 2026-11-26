@@ -164,7 +164,7 @@ func (dk *Deathknight) bloodCakedBladeHit(isMh bool) *core.Spell {
 		ProcMask:    core.ProcMaskProc,
 		Flags:       core.SpellFlagNoOnCastComplete | core.SpellFlagMeleeMetrics,
 
-		DamageMultiplier: 1 *
+		DamageMultiplier: 1.06 * // wotlksim: Blood-Caked Strike +6% damage
 			core.TernaryFloat64(isMh, 1, dk.nervesOfColdSteelBonus()),
 		ThreatMultiplier: 1,
 

@@ -117,6 +117,8 @@ func (warlock *Warlock) Initialize() {
 		warlock.Corruption.MetricsScale = 0.93
 		warlock.ShadowBolt.MetricsScale = 0.96
 		warlock.SoulFire.MetricsScale = 0.96
+		// Whitemane: Demonology warlock deals 0.5% less damage (warlock only, not the pet).
+		warlock.PseudoStats.DamageDealtMultiplier *= 0.995
 	}
 	warlock.registerShadowBurnSpell()
 	warlock.registerSearingPainSpell()
