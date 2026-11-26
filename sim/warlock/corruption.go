@@ -29,7 +29,9 @@ func (warlock *Warlock) registerCorruptionSpell() {
 
 		BonusCritRating: 0 +
 			3*float64(warlock.Talents.Malediction)*core.CritRatingPerCritChance +
-			core.TernaryFloat64(warlock.HasSetBonus(ItemSetDarkCovensRegalia, 2), 5*core.CritRatingPerCritChance, 0),
+			core.TernaryFloat64(warlock.HasSetBonus(ItemSetDarkCovensRegalia, 2), 5*core.CritRatingPerCritChance, 0) +
+			// Whitemane: Corruption +3% crit chance for Affliction.
+			core.TernaryFloat64(warlock.PrimaryTalentTree == 0, 3*core.CritRatingPerCritChance, 0),
 		DamageMultiplierAdditive: 1 +
 			warlock.GrandSpellstoneBonus() +
 			0.03*float64(warlock.Talents.ShadowMastery) +

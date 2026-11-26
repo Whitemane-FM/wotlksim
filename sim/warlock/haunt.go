@@ -51,6 +51,8 @@ func (warlock *Warlock) registerHauntSpell() {
 			},
 		},
 
+		// Whitemane: Haunt +7% crit chance for Affliction.
+		BonusCritRating: core.TernaryFloat64(warlock.PrimaryTalentTree == 0, 7*core.CritRatingPerCritChance, 0),
 		DamageMultiplierAdditive: 1 +
 			warlock.GrandFirestoneBonus() +
 			0.03*float64(warlock.Talents.ShadowMastery),
